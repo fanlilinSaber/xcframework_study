@@ -1,0 +1,43 @@
+{
+  "name": "StaticLibrary",
+  "version": "1.0.0",
+  "summary": "StaticLibrary",
+  "homepage": "https://github.com/fanlilinSaber/xcframework_study",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Fan Li Lin": "824589131.com"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "swift_versions": [
+    "5.0"
+  ],
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/fanlilinSaber/xcframework_study.git",
+    "tag": "v1.0.0"
+  },
+  "default_subspecs": "XCFramework",
+  "subspecs": [
+    {
+      "name": "Code",
+      "source_files": "StaticLibrary/StaticLibrary/*.{h,m}"
+    },
+    {
+      "name": "XCFramework",
+      "vendored_libraries": [
+        "StaticLibrary/XCFramework/StaticLibrary.xcframework"
+      ],
+      "source_files": "StaticLibrary/XCFramework/Headers/*"
+    }
+  ],
+  "swift_version": "5.0"
+}

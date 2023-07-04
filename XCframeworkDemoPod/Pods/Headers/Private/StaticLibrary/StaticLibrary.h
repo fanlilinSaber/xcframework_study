@@ -1,0 +1,1 @@
+../../../StaticLibrary/StaticLibrary/XCFramework/Headers/StaticLibrary.h
