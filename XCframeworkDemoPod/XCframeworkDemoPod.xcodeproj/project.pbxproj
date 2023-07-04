@@ -14,6 +14,7 @@
 		48F66C622A54293900689507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F66C612A54293900689507 /* Assets.xcassets */; };
 		48F66C652A54293900689507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F66C632A54293900689507 /* LaunchScreen.storyboard */; };
 		48F66C682A54293900689507 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F66C672A54293900689507 /* main.m */; };
+		48F66C702A542EAA00689507 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F66C6F2A542EAA00689507 /* TestSwift.swift */; };
 		DED7194F0AC7AE1CE01AFD76 /* libPods-XCframeworkDemoPod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2721D2252930E8C284A24D /* libPods-XCframeworkDemoPod.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 		48F66C642A54293900689507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48F66C662A54293900689507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48F66C672A54293900689507 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48F66C6E2A542EAA00689507 /* XCframeworkDemoPod-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCframeworkDemoPod-Bridging-Header.h"; sourceTree = "<group>"; };
+		48F66C6F2A542EAA00689507 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
 		6427C92D9DE3F144280A3996 /* Pods-XCframeworkDemoPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCframeworkDemoPod.release.xcconfig"; path = "Target Support Files/Pods-XCframeworkDemoPod/Pods-XCframeworkDemoPod.release.xcconfig"; sourceTree = "<group>"; };
 		DE4FDBBC857470987BA9805A /* Pods-XCframeworkDemoPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCframeworkDemoPod.debug.xcconfig"; path = "Target Support Files/Pods-XCframeworkDemoPod/Pods-XCframeworkDemoPod.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,11 +85,13 @@
 				48F66C592A54293800689507 /* SceneDelegate.m */,
 				48F66C5B2A54293800689507 /* ViewController.h */,
 				48F66C5C2A54293800689507 /* ViewController.m */,
+				48F66C6F2A542EAA00689507 /* TestSwift.swift */,
 				48F66C5E2A54293800689507 /* Main.storyboard */,
 				48F66C612A54293900689507 /* Assets.xcassets */,
 				48F66C632A54293900689507 /* LaunchScreen.storyboard */,
 				48F66C662A54293900689507 /* Info.plist */,
 				48F66C672A54293900689507 /* main.m */,
+				48F66C6E2A542EAA00689507 /* XCframeworkDemoPod-Bridging-Header.h */,
 			);
 			path = XCframeworkDemoPod;
 			sourceTree = "<group>";
@@ -97,7 +102,6 @@
 				DE4FDBBC857470987BA9805A /* Pods-XCframeworkDemoPod.debug.xcconfig */,
 				6427C92D9DE3F144280A3996 /* Pods-XCframeworkDemoPod.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -133,6 +137,7 @@
 				TargetAttributes = {
 					48F66C512A54293800689507 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -198,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F66C5D2A54293800689507 /* ViewController.m in Sources */,
+				48F66C702A542EAA00689507 /* TestSwift.swift in Sources */,
 				48F66C572A54293800689507 /* AppDelegate.m in Sources */,
 				48F66C682A54293900689507 /* main.m in Sources */,
 				48F66C5A2A54293800689507 /* SceneDelegate.m in Sources */,
@@ -342,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4DFRU2343;
@@ -360,6 +367,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fanlilin.XCframeworkDemoPod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "XCframeworkDemoPod/XCframeworkDemoPod-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -370,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4DFRU2343;
@@ -388,6 +399,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fanlilin.XCframeworkDemoPod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "XCframeworkDemoPod/XCframeworkDemoPod-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -33,7 +33,7 @@
     },
     {
       "name": "XCFramework",
-      "vendored_libraries": [
+      "vendored_frameworks": [
         "StaticLibrary/XCFramework/StaticLibrary.xcframework"
       ],
       "source_files": "StaticLibrary/XCFramework/Headers/*"

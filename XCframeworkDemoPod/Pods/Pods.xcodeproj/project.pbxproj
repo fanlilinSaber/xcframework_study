@@ -9,8 +9,9 @@
 /* Begin PBXAggregateTarget section */
 		FE4E2CDB974470B509FED6586507C534 /* StaticLibrary */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 20678EA3683957C5C28CF186F075F0FE /* Build configuration list for PBXAggregateTarget "StaticLibrary" */;
+			buildConfigurationList = C0D731A2E42833D50B8002046A11504C /* Build configuration list for PBXAggregateTarget "StaticLibrary" */;
 			buildPhases = (
+				FF6DC43AE11BB613B2E4850FADF6E9E2 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
@@ -24,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CD4ED2546A5CC441E258B6651B71389A /* PBXContainerItemProxy */ = {
+		930A323B872953EFEB92A3EF6EAD47E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -38,15 +39,17 @@
 		0D98F04A7968123E225C65A97B7E54EA /* Pods-XCframeworkDemoPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XCframeworkDemoPod.modulemap"; sourceTree = "<group>"; };
 		133038BA8E436A769A7C94F69F3B1915 /* Pods-XCframeworkDemoPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XCframeworkDemoPod.debug.xcconfig"; sourceTree = "<group>"; };
 		16654417E966BDDA0C53F5723477904B /* Pods-XCframeworkDemoPod-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XCframeworkDemoPod-acknowledgements.markdown"; sourceTree = "<group>"; };
+		31F39427FB8CA8C03760EE3B56561698 /* StaticLibrary-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "StaticLibrary-xcframeworks.sh"; sourceTree = "<group>"; };
 		326A9C471812365C7B29F7B328594255 /* Pods-XCframeworkDemoPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XCframeworkDemoPod-dummy.m"; sourceTree = "<group>"; };
 		4DE3AEDC885C0CDC1830C0C7E50E616C /* Pods-XCframeworkDemoPod-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XCframeworkDemoPod-acknowledgements.plist"; sourceTree = "<group>"; };
-		4ED52BE74BD02789032AD79DFAB2F43F /* PublicTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PublicTest.h; path = StaticLibrary/XCFramework/Headers/PublicTest.h; sourceTree = "<group>"; };
+		52D0C63005DEFF66496705202BD6B8B5 /* StaticLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.release.xcconfig; sourceTree = "<group>"; };
 		53A8E2EA3D6F32CF5E2670372357A39F /* Pods-XCframeworkDemoPod */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-XCframeworkDemoPod"; path = "libPods-XCframeworkDemoPod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9179382D3CE47FFD6749E998ECF02862 /* StaticLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.release.xcconfig; sourceTree = "<group>"; };
+		78CC180F71AD2514D62D2F4EF628B8FA /* StaticHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticHeader.h; path = StaticLibrary/XCFramework/Headers/StaticHeader.h; sourceTree = "<group>"; };
+		8988AF13CF87541BE5EE8B676452E468 /* PublicTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PublicTest.h; path = StaticLibrary/XCFramework/Headers/PublicTest.h; sourceTree = "<group>"; };
+		8AC7EE8B5AB4A0C5515D0D253A4747EB /* StaticLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.debug.xcconfig; sourceTree = "<group>"; };
+		9A222A92689A615B5934DF1C34B1C653 /* StaticLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticLibrary.h; path = StaticLibrary/XCFramework/Headers/StaticLibrary.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A34216B77C75E8FCF08CFBA8A78F84C1 /* StaticHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticHeader.h; path = StaticLibrary/XCFramework/Headers/StaticHeader.h; sourceTree = "<group>"; };
-		C0619102D8223D09FEE90B36EF1D6120 /* StaticLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticLibrary.h; path = StaticLibrary/XCFramework/Headers/StaticLibrary.h; sourceTree = "<group>"; };
-		D422C6948B6250F08A5CF6626CBC2742 /* StaticLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.debug.xcconfig; sourceTree = "<group>"; };
+		CBA2346681A9CF189E729360A73262E2 /* StaticLibrary.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = StaticLibrary.xcframework; path = StaticLibrary/XCFramework/StaticLibrary.xcframework; sourceTree = "<group>"; };
 		E764FB8D2759DF88D622AC9DE2F36E28 /* Pods-XCframeworkDemoPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XCframeworkDemoPod.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,32 +64,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0826144D540B1BF65046FA89F3BFD5AA /* StaticLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				46018E44E9543DB47E78A354E9E8A67A /* Support Files */,
-				AECB3A195D3D90E1382141B3BF1E916F /* XCFramework */,
-			);
-			name = StaticLibrary;
-			path = StaticLibrary;
-			sourceTree = "<group>";
-		};
 		408B6557340933DC0C663D9029917863 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				53A8E2EA3D6F32CF5E2670372357A39F /* Pods-XCframeworkDemoPod */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		46018E44E9543DB47E78A354E9E8A67A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D422C6948B6250F08A5CF6626CBC2742 /* StaticLibrary.debug.xcconfig */,
-				9179382D3CE47FFD6749E998ECF02862 /* StaticLibrary.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/StaticLibrary";
 			sourceTree = "<group>";
 		};
 		51ED46812731FB22A8895F0D5097EF17 /* Targets Support Files */ = {
@@ -97,12 +80,52 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		614E321876DDDC43F5790E684117618B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBA2346681A9CF189E729360A73262E2 /* StaticLibrary.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		667BDAC8850517AA0C30F59612B44120 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0826144D540B1BF65046FA89F3BFD5AA /* StaticLibrary */,
+				889A64318FB3E6CA2BF0267DFA9452DD /* StaticLibrary */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		709202701976B08E5A083CB29DACD732 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				31F39427FB8CA8C03760EE3B56561698 /* StaticLibrary-xcframeworks.sh */,
+				8AC7EE8B5AB4A0C5515D0D253A4747EB /* StaticLibrary.debug.xcconfig */,
+				52D0C63005DEFF66496705202BD6B8B5 /* StaticLibrary.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/StaticLibrary";
+			sourceTree = "<group>";
+		};
+		7C6ED778E90B8B7D0150D2B76BF968D5 /* XCFramework */ = {
+			isa = PBXGroup;
+			children = (
+				8988AF13CF87541BE5EE8B676452E468 /* PublicTest.h */,
+				78CC180F71AD2514D62D2F4EF628B8FA /* StaticHeader.h */,
+				9A222A92689A615B5934DF1C34B1C653 /* StaticLibrary.h */,
+				614E321876DDDC43F5790E684117618B /* Frameworks */,
+			);
+			name = XCFramework;
+			sourceTree = "<group>";
+		};
+		889A64318FB3E6CA2BF0267DFA9452DD /* StaticLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				709202701976B08E5A083CB29DACD732 /* Support Files */,
+				7C6ED778E90B8B7D0150D2B76BF968D5 /* XCFramework */,
+			);
+			name = StaticLibrary;
+			path = StaticLibrary;
 			sourceTree = "<group>";
 		};
 		A76A56616449FA0C324EA40072750E31 /* Pods-XCframeworkDemoPod */ = {
@@ -118,16 +141,6 @@
 			);
 			name = "Pods-XCframeworkDemoPod";
 			path = "Target Support Files/Pods-XCframeworkDemoPod";
-			sourceTree = "<group>";
-		};
-		AECB3A195D3D90E1382141B3BF1E916F /* XCFramework */ = {
-			isa = PBXGroup;
-			children = (
-				4ED52BE74BD02789032AD79DFAB2F43F /* PublicTest.h */,
-				A34216B77C75E8FCF08CFBA8A78F84C1 /* StaticHeader.h */,
-				C0619102D8223D09FEE90B36EF1D6120 /* StaticLibrary.h */,
-			);
-			name = XCFramework;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -173,7 +186,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1D91443405F664BD611EC2DB3E9916F8 /* PBXTargetDependency */,
+				FE47E89567AC515405E1A87B8ADDB671 /* PBXTargetDependency */,
 			);
 			name = "Pods-XCframeworkDemoPod";
 			productName = "Pods-XCframeworkDemoPod";
@@ -208,6 +221,26 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FF6DC43AE11BB613B2E4850FADF6E9E2 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/StaticLibrary/StaticLibrary-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/StaticLibrary/StaticLibrary-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/StaticLibrary/StaticLibrary-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E6ECD2A75089ACA62A750881413565F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -220,11 +253,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1D91443405F664BD611EC2DB3E9916F8 /* PBXTargetDependency */ = {
+		FE47E89567AC515405E1A87B8ADDB671 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = StaticLibrary;
 			target = FE4E2CDB974470B509FED6586507C534 /* StaticLibrary */;
-			targetProxy = CD4ED2546A5CC441E258B6651B71389A /* PBXContainerItemProxy */;
+			targetProxy = 930A323B872953EFEB92A3EF6EAD47E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -250,24 +283,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		42FF8F6944064D238F8F70C03888F9D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9179382D3CE47FFD6749E998ECF02862 /* StaticLibrary.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		446BA1B9A1F1F2F95D04E5F82EB1B0F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -397,9 +412,9 @@
 			};
 			name = Release;
 		};
-		6CD6E536454B8CA8D8F11A13490EF527 /* Debug */ = {
+		85EE18FC93B55139E9BBE8204D1C2571 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D422C6948B6250F08A5CF6626CBC2742 /* StaticLibrary.debug.xcconfig */;
+			baseConfigurationReference = 8AC7EE8B5AB4A0C5515D0D253A4747EB /* StaticLibrary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -437,18 +452,27 @@
 			};
 			name = Release;
 		};
+		F5F2AA27AB079066D724D0C82D106587 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D0C63005DEFF66496705202BD6B8B5 /* StaticLibrary.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20678EA3683957C5C28CF186F075F0FE /* Build configuration list for PBXAggregateTarget "StaticLibrary" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6CD6E536454B8CA8D8F11A13490EF527 /* Debug */,
-				42FF8F6944064D238F8F70C03888F9D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -463,6 +487,15 @@
 			buildConfigurations = (
 				2FE923EB28C7EB6F9EB0CBFC243A4D61 /* Debug */,
 				E38AA99813FE78F0A79DE910C813EB7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0D731A2E42833D50B8002046A11504C /* Build configuration list for PBXAggregateTarget "StaticLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85EE18FC93B55139E9BBE8204D1C2571 /* Debug */,
+				F5F2AA27AB079066D724D0C82D106587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

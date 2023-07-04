@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source = { :git => 'https://github.com/fanlilinSaber/xcframework_study.git', :tag => "v#{s.version}" }
 
+ s.swift_version = "5.0"
  s.default_subspec = 'XCFramework'
  s.subspec "Code" do |ss|
     ss.source_files = "StaticLibrary/StaticLibrary/*.{h,m}"
