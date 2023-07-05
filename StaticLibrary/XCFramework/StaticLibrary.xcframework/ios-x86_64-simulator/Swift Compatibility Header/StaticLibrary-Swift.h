@@ -251,12 +251,9 @@ using UInt = size_t;
 #endif
 
 #if defined(__OBJC__)
-@class UILabel;
 
 SWIFT_CLASS("_TtC13StaticLibrary15PublicSwiftTest")
 @interface PublicSwiftTest : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UILabel * _Nonnull sharedLabel;)
-+ (UILabel * _Nonnull)sharedLabel SWIFT_WARN_UNUSED_RESULT;
 + (void)test;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

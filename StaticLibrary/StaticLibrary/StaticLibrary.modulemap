@@ -4,3 +4,10 @@ module StaticLibrary {
   export *
   module * { export * }
 }
+
+//module StaticLibrary.Swift {
+//  header "/Users/fanlilinm1/Library/Developer/Xcode/DerivedData/StaticLibrary-gzefbibwsebdqsevyzpxtvmmagvm/Build/Intermediates.noindex/StaticLibrary.build/Debug-iphonesimulator/StaticLibrary.build/DerivedSources/StaticLibrary-Swift.h"
+//  requires objc
+//}
+
+

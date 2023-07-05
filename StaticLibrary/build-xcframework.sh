@@ -34,9 +34,10 @@ DERIVEDDAT_PATH="XCFramework/Build"
 
 # ================== 临时变量 ==================
 
-# 工程后缀
-PROJEC_SUFFIX=''
+# 工程扩展名
+PROJEC_EXTENSION=''
 
+        
 # ================== 公共方法 ==================
 
 # 错误信息的打印并退出
@@ -119,9 +120,9 @@ function preBuildCheck() {
     fi
     
     if [ $PROJEC_FORM = "project" ]; then
-        PROJEC_SUFFIX='xcodeproj'
+        PROJEC_EXTENSION='xcodeproj'
     else
-        PROJEC_SUFFIX='xcworkspace'
+        PROJEC_EXTENSION='xcworkspace'
     fi
     
     logHigh "工程名：${PROJECT_NAME}  项目形式为：${PROJEC_FORM}"
@@ -139,7 +140,7 @@ function removeBuild() {
     echo
     echo '====> Clean编译环境'
     # clean一下Release编译环境
-    xcodebuild clean -$PROJEC_FORM $PROJECT_NAME.$PROJEC_SUFFIX -scheme $PROJECT_NAME -configuration Release
+    xcrun xcodebuild clean -$PROJEC_FORM $PROJECT_NAME.$PROJEC_EXTENSION -scheme $PROJECT_NAME -configuration Release
     logHigh "编译环境Clean完成"
     echo
 }
@@ -150,8 +151,8 @@ function startBuild() {
     # 输出目录为 XCFramework/Build/Simulator
     # 输出目录为 XCFramework/Build/Device
     echo '====> 开始编译模拟器和真机Release'
-    xcodebuild archive $BUILD_SIMULATOR_INTER_VARIABLES \
-            -$PROJEC_FORM $PROJECT_NAME.$PROJEC_SUFFIX \
+    xcrun xcodebuild archive $BUILD_SIMULATOR_INTER_VARIABLES \
+            -$PROJEC_FORM $PROJECT_NAME.$PROJEC_EXTENSION \
             -scheme $SCHEME_NAME \
             -configuration Release \
             -destination 'generic/platform=iOS Simulator' \
@@ -159,15 +160,17 @@ function startBuild() {
             -derivedDataPath $DERIVEDDAT_PATH/Simulator \
             -archivePath $ARCHIVE_PATH/simulator.xcarchive \
             -destination-timeout 3 \
+            -quiet \
             & \
-    xcodebuild archive $BUILD_IPHONEOS_INTER_VARIABLES \
-            -$PROJEC_FORM $PROJECT_NAME.$PROJEC_SUFFIX \
+    xcrun xcodebuild archive $BUILD_IPHONEOS_INTER_VARIABLES \
+            -$PROJEC_FORM $PROJECT_NAME.$PROJEC_EXTENSION \
             -scheme $SCHEME_NAME \
             -configuration Release \
             -destination 'generic/platform=iOS' \
             -sdk iphoneos \
             -derivedDataPath $DERIVEDDAT_PATH/Device \
-            -archivePath $ARCHIVE_PATH/iOS.xcarchive
+            -archivePath $ARCHIVE_PATH/iOS.xcarchive \
+            -quiet
     logHigh "编译模拟器和真机Release完成"
     echo
 }
@@ -197,16 +200,16 @@ function createXCFramework() {
     # 合并Release的模拟器和真机framework
     echo '====> 开始合并xcframework'
     if [ $productType = "a" ]; then
-        xcodebuild -create-xcframework \
+        xcrun xcodebuild -create-xcframework \
             -allow-internal-distribution \
-            -library ${ARCHIVE_PATH}/simulator.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a \
-            -library ${ARCHIVE_PATH}/iOS.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a \
+            -library ${ARCHIVE_PATH}/simulator.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a -headers XCFramework/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphonesimulator/include/$PROJECT_NAME \
+            -library ${ARCHIVE_PATH}/iOS.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a -headers XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/include/$PROJECT_NAME \
             -output XCFramework/${FRAMEWORK_NAME}.xcframework
             
         # .a库需要额外做工作
         libraryOutput
     else
-        xcodebuild -create-xcframework \
+        xcrun xcodebuild -create-xcframework \
             -allow-internal-distribution \
             -framework ${ARCHIVE_PATH}/simulator.xcarchive/Products/Library/Frameworks/${PROJECT_NAME}.framework \
             -framework ${ARCHIVE_PATH}/iOS.xcarchive/Products/Library/Frameworks/${PROJECT_NAME}.framework \

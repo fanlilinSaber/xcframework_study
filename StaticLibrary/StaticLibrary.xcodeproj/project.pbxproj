@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275810302A55D4ED00319431 /* StaticLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */; };
+		275810312A55D4ED00319431 /* PublicTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 48BE1AD22A4D850000BF3823 /* PublicTest.h */; };
+		275810322A55D4ED00319431 /* PrivateTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 48BE1ACA2A4D6CED00BF3823 /* PrivateTest.h */; };
+		275810332A55D4ED00319431 /* StaticHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 480B8D462A4E7E9100E598C4 /* StaticHeader.h */; };
+		275810342A55D4ED00319431 /* StaticLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */; };
 		480B8D422A4E795D00E598C4 /* PublicSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */; };
 		480B8D452A4E7E3400E598C4 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D442A4E7E3400E598C4 /* TestSwift.swift */; };
 		480B8D472A4E7F2F00E598C4 /* StaticHeader.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 480B8D462A4E7E9100E598C4 /* StaticHeader.h */; };
-		4860513D2A558E45006D5F6E /* libStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE1A672A4D307900BF3823 /* libStaticLibrary.a */; };
 		48BE1A6C2A4D307900BF3823 /* StaticLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A6B2A4D307900BF3823 /* StaticLibrary.m */; };
 		48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */; };
 		48BE1A7B2A4D30C900BF3823 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A7A2A4D30C900BF3823 /* AppDelegate.m */; };
@@ -52,11 +56,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2758102E2A55CFF100319431 /* StaticLibrary.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
 		480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSwiftTest.swift; sourceTree = "<group>"; };
 		480B8D432A4E7E3300E598C4 /* StaticLibrary IOS Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary IOS Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		480B8D442A4E7E3400E598C4 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
 		480B8D462A4E7E9100E598C4 /* StaticHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticHeader.h; sourceTree = "<group>"; };
-		4860513B2A558D36006D5F6E /* StaticLibrary.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
 		4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary-umbrella.h"; sourceTree = "<group>"; };
 		48BE1A672A4D307900BF3823 /* libStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLibrary.h; sourceTree = "<group>"; };
@@ -91,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4860513D2A558E45006D5F6E /* libStaticLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +132,7 @@
 				480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */,
 				480B8D462A4E7E9100E598C4 /* StaticHeader.h */,
 				4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */,
-				4860513B2A558D36006D5F6E /* StaticLibrary.modulemap */,
+				2758102E2A55CFF100319431 /* StaticLibrary.modulemap */,
 			);
 			path = StaticLibrary;
 			sourceTree = "<group>";
@@ -163,11 +166,27 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		2758102F2A55D4BB00319431 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275810302A55D4ED00319431 /* StaticLibrary.h in Headers */,
+				275810312A55D4ED00319431 /* PublicTest.h in Headers */,
+				275810322A55D4ED00319431 /* PrivateTest.h in Headers */,
+				275810332A55D4ED00319431 /* StaticHeader.h in Headers */,
+				275810342A55D4ED00319431 /* StaticLibrary-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		48BE1A662A4D307900BF3823 /* StaticLibrary */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48BE1A702A4D307900BF3823 /* Build configuration list for PBXNativeTarget "StaticLibrary" */;
 			buildPhases = (
+				2758102F2A55D4BB00319431 /* Headers */,
 				48BE1A632A4D307900BF3823 /* Sources */,
 				48BE1A642A4D307900BF3823 /* Frameworks */,
 				48BE1A652A4D307900BF3823 /* Copy Files */,
@@ -417,11 +436,12 @@
 		48BE1A712A4D307900BF3823 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L4DFRU2343;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,28 +454,26 @@
 				);
 				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/StaticLibrary\"",
-				);
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		48BE1A722A4D307900BF3823 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L4DFRU2343;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,16 +486,13 @@
 				);
 				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/StaticLibrary\"",
-				);
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -504,6 +519,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}/lib/**";
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "fanlilin.StaticLibrary-IOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -537,6 +553,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}/lib/**";
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "fanlilin.StaticLibrary-IOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

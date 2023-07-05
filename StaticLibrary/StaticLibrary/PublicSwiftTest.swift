@@ -13,6 +13,9 @@ public class PublicSwiftTest: NSObject {
     
     @objc public static func test() {
         print("PublicSwiftTest")
+        
+        StaticLibrary.test()
+        
     }
     
 }
