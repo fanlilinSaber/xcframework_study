@@ -22,10 +22,9 @@
     [StaticLibrary test];
 
     [PublicTest test];
-
     
     [PublicSwiftTest test];
-//    [PublicSwiftTest test];
+
 }
 
 

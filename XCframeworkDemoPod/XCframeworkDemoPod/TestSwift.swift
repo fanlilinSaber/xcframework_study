@@ -7,13 +7,16 @@
 
 import Foundation
 
-import StaticLibrary.Swift
+import StaticLibrary
 
 class TestSwift {
     
     public func test() {
         PublicTest.test()
 
+        StaticLibrary.test()
         PublicSwiftTest.test()
+        
+
     }
 }

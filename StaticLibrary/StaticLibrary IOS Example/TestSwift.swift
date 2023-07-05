@@ -15,7 +15,7 @@ public class TestSwift: NSObject {
         
         PublicSwiftTest.test()
         
-        PublicTest.test();
+//        PublicTest.test();
         
     }
 }

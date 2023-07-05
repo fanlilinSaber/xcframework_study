@@ -373,15 +373,12 @@
 					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-fmodule-map-file=\"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"",
-				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = fanlilin.XCframeworkDemoPod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(inherited) \"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework\"";
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCframeworkDemoPod/XCframeworkDemoPod-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -420,15 +417,12 @@
 					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-fmodule-map-file=\"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"",
-				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = fanlilin.XCframeworkDemoPod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(inherited) \"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework\"";
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCframeworkDemoPod/XCframeworkDemoPod-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

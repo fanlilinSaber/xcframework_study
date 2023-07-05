@@ -15,8 +15,7 @@ public class SwiftTest: NSObject {
         print("XCframeworkDemo - SwiftTest")
         
         PublicSwiftTest.test()
-        
-
-//        StaticLibrary.test()
+    
+        StaticLibrary.test()
     }
 }

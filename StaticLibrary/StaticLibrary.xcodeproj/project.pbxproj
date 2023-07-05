@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		480B8D422A4E795D00E598C4 /* PublicSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */; };
 		480B8D452A4E7E3400E598C4 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D442A4E7E3400E598C4 /* TestSwift.swift */; };
-		480B8D472A4E7F2F00E598C4 /* StaticHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 480B8D462A4E7E9100E598C4 /* StaticHeader.h */; };
+		480B8D472A4E7F2F00E598C4 /* StaticHeader.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 480B8D462A4E7E9100E598C4 /* StaticHeader.h */; };
+		4860513D2A558E45006D5F6E /* libStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE1A672A4D307900BF3823 /* libStaticLibrary.a */; };
 		48BE1A6C2A4D307900BF3823 /* StaticLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A6B2A4D307900BF3823 /* StaticLibrary.m */; };
-		48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */; };
+		48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */; };
 		48BE1A7B2A4D30C900BF3823 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A7A2A4D30C900BF3823 /* AppDelegate.m */; };
 		48BE1A7E2A4D30C900BF3823 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A7D2A4D30C900BF3823 /* SceneDelegate.m */; };
 		48BE1A812A4D30C900BF3823 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A802A4D30C900BF3823 /* ViewController.m */; };
@@ -19,14 +20,13 @@
 		48BE1A862A4D30CA00BF3823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48BE1A852A4D30CA00BF3823 /* Assets.xcassets */; };
 		48BE1A892A4D30CA00BF3823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BE1A872A4D30CA00BF3823 /* LaunchScreen.storyboard */; };
 		48BE1A8C2A4D30CA00BF3823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A8B2A4D30CA00BF3823 /* main.m */; };
-		48BE1A972A4D5D6000BF3823 /* libStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE1A672A4D307900BF3823 /* libStaticLibrary.a */; };
 		48BE1ACC2A4D6CED00BF3823 /* PrivateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1ACB2A4D6CED00BF3823 /* PrivateTest.m */; };
 		48BE1AD42A4D850000BF3823 /* PublicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1AD32A4D850000BF3823 /* PublicTest.m */; };
-		48BE1AD52A4D851C00BF3823 /* PublicTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48BE1AD22A4D850000BF3823 /* PublicTest.h */; };
+		48BE1AD52A4D851C00BF3823 /* PublicTest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 48BE1AD22A4D850000BF3823 /* PublicTest.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		48BE1A922A4D310A00BF3823 /* PBXContainerItemProxy */ = {
+		4860513E2A558E45006D5F6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48BE1A5F2A4D307900BF3823 /* Project object */;
 			proxyType = 1;
@@ -36,26 +36,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		48BE1A652A4D307900BF3823 /* CopyFiles */ = {
+		48BE1A652A4D307900BF3823 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				480B8D472A4E7F2F00E598C4 /* StaticHeader.h in CopyFiles */,
-				48BE1AD52A4D851C00BF3823 /* PublicTest.h in CopyFiles */,
-				48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in CopyFiles */,
+				480B8D472A4E7F2F00E598C4 /* StaticHeader.h in Copy Files */,
+				48BE1AD52A4D851C00BF3823 /* PublicTest.h in Copy Files */,
+				48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		480B8D402A4E795C00E598C4 /* StaticLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
 		480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSwiftTest.swift; sourceTree = "<group>"; };
 		480B8D432A4E7E3300E598C4 /* StaticLibrary IOS Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary IOS Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		480B8D442A4E7E3400E598C4 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
 		480B8D462A4E7E9100E598C4 /* StaticHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticHeader.h; sourceTree = "<group>"; };
+		4860513B2A558D36006D5F6E /* StaticLibrary.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
+		4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary-umbrella.h"; sourceTree = "<group>"; };
 		48BE1A672A4D307900BF3823 /* libStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLibrary.h; sourceTree = "<group>"; };
 		48BE1A6B2A4D307900BF3823 /* StaticLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticLibrary.m; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48BE1A972A4D5D6000BF3823 /* libStaticLibrary.a in Frameworks */,
+				4860513D2A558E45006D5F6E /* libStaticLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +127,9 @@
 				48BE1ACA2A4D6CED00BF3823 /* PrivateTest.h */,
 				48BE1ACB2A4D6CED00BF3823 /* PrivateTest.m */,
 				480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */,
-				480B8D402A4E795C00E598C4 /* StaticLibrary-Bridging-Header.h */,
 				480B8D462A4E7E9100E598C4 /* StaticHeader.h */,
+				4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */,
+				4860513B2A558D36006D5F6E /* StaticLibrary.modulemap */,
 			);
 			path = StaticLibrary;
 			sourceTree = "<group>";
@@ -167,7 +170,7 @@
 			buildPhases = (
 				48BE1A632A4D307900BF3823 /* Sources */,
 				48BE1A642A4D307900BF3823 /* Frameworks */,
-				48BE1A652A4D307900BF3823 /* CopyFiles */,
+				48BE1A652A4D307900BF3823 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -189,7 +192,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				48BE1A932A4D310A00BF3823 /* PBXTargetDependency */,
+				4860513F2A558E45006D5F6E /* PBXTargetDependency */,
 			);
 			name = "StaticLibrary IOS Example";
 			productName = "StaticLibrary IOS Example";
@@ -274,10 +277,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		48BE1A932A4D310A00BF3823 /* PBXTargetDependency */ = {
+		4860513F2A558E45006D5F6E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48BE1A662A4D307900BF3823 /* StaticLibrary */;
-			targetProxy = 48BE1A922A4D310A00BF3823 /* PBXContainerItemProxy */;
+			targetProxy = 4860513E2A558E45006D5F6E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -414,45 +417,67 @@
 		48BE1A712A4D307900BF3823 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = L4DFRU2343;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/StaticLibrary\"",
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "";
+				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "StaticLibrary/StaticLibrary-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/StaticLibrary\"",
+				);
 			};
 			name = Debug;
 		};
 		48BE1A722A4D307900BF3823 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = L4DFRU2343;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/StaticLibrary\"",
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "";
+				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "StaticLibrary/StaticLibrary-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/StaticLibrary\"",
+				);
 			};
 			name = Release;
 		};
