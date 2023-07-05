@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
  s.swift_version = "5.0"
  s.default_subspec = 'XCFramework'
  s.subspec "Code" do |ss|
-    ss.source_files = "StaticLibrary/StaticLibrary/*.{h,m}"
+    ss.source_files = "StaticLibrary/StaticLibrary/*.{h,m,swift}"
  end
  
  s.subspec "XCFramework" do |ss|

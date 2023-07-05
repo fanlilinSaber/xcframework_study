@@ -8,7 +8,7 @@
 #import "ViewController.h"
 //#import "StaticHeader.h"
 //#import "StaticLibrary-Swift.h"
-#import "XCframeworkDemo-Swift.h"
+//#import "XCframeworkDemo-Swift.h"
 @import StaticLibrary;
 
 @import StaticLibrary.Swift;

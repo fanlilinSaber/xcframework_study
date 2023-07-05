@@ -10,9 +10,12 @@
 #endif
 #endif
 
-#import "StaticLibrary.h"
-#import "StaticHeader.h"
+#import "PrivateTest.h"
 #import "PublicTest.h"
+#import "StaticHeader.h"
+#import "StaticLibrary-Bridging-Header.h"
+#import "StaticLibrary.h"
 
 FOUNDATION_EXPORT double StaticLibraryVersionNumber;
 FOUNDATION_EXPORT const unsigned char StaticLibraryVersionString[];
+

@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import StaticLibrary;
 
 class TestSwift {
     
+    public func test() {
+        PublicTest.test()
+    }
 }
