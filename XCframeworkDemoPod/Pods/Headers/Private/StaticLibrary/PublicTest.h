@@ -1,1 +1,1 @@
-../../../StaticLibrary/StaticLibrary/StaticLibrary/PublicTest.h
+../../../StaticLibrary/StaticLibrary/XCFramework/Headers/PublicTest.h

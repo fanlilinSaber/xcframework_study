@@ -16,5 +16,7 @@ public class SwiftTest: NSObject {
         
         PublicSwiftTest.test()
         
+
+//        StaticLibrary.test()
     }
 }

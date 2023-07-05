@@ -10,10 +10,8 @@
 #endif
 #endif
 
-#import "PrivateTest.h"
 #import "PublicTest.h"
 #import "StaticHeader.h"
-#import "StaticLibrary-Bridging-Header.h"
 #import "StaticLibrary.h"
 
 FOUNDATION_EXPORT double StaticLibraryVersionNumber;

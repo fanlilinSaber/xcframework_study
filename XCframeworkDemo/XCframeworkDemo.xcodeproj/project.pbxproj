@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		480B8D572A4EB20400E598C4 /* SwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D562A4EB20400E598C4 /* SwiftTest.swift */; };
-		483C7A292A53F7A000805844 /* StaticLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483C7A282A53F7A000805844 /* StaticLibrary.xcframework */; };
+		486051382A558321006D5F6E /* StaticLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486051332A558321006D5F6E /* StaticLibrary.xcframework */; };
 		48BE1AA62A4D5DBC00BF3823 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1AA52A4D5DBC00BF3823 /* AppDelegate.m */; };
 		48BE1AA92A4D5DBC00BF3823 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1AA82A4D5DBC00BF3823 /* SceneDelegate.m */; };
 		48BE1AAC2A4D5DBC00BF3823 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1AAB2A4D5DBC00BF3823 /* ViewController.m */; };
@@ -20,10 +20,10 @@
 
 /* Begin PBXFileReference section */
 		480B8D562A4EB20400E598C4 /* SwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTest.swift; sourceTree = "<group>"; };
-		483C7A282A53F7A000805844 /* StaticLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = StaticLibrary.xcframework; sourceTree = "<group>"; };
-		483C7A2B2A53F7A500805844 /* StaticLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticLibrary.h; sourceTree = "<group>"; };
-		483C7A2C2A53F7A500805844 /* StaticHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticHeader.h; sourceTree = "<group>"; };
-		483C7A2D2A53F7A500805844 /* PublicTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicTest.h; sourceTree = "<group>"; };
+		486051332A558321006D5F6E /* StaticLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = StaticLibrary.xcframework; sourceTree = "<group>"; };
+		486051352A558321006D5F6E /* StaticLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticLibrary.h; sourceTree = "<group>"; };
+		486051362A558321006D5F6E /* StaticHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticHeader.h; sourceTree = "<group>"; };
+		486051372A558321006D5F6E /* PublicTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicTest.h; sourceTree = "<group>"; };
 		48BE1AA12A4D5DBC00BF3823 /* XCframeworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCframeworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BE1AA42A4D5DBC00BF3823 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48BE1AA52A4D5DBC00BF3823 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,28 +43,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483C7A292A53F7A000805844 /* StaticLibrary.xcframework in Frameworks */,
+				486051382A558321006D5F6E /* StaticLibrary.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		483C7A2A2A53F7A500805844 /* Headers */ = {
+		486051322A558321006D5F6E /* XCFramework */ = {
 			isa = PBXGroup;
 			children = (
-				483C7A2B2A53F7A500805844 /* StaticLibrary.h */,
-				483C7A2C2A53F7A500805844 /* StaticHeader.h */,
-				483C7A2D2A53F7A500805844 /* PublicTest.h */,
+				486051332A558321006D5F6E /* StaticLibrary.xcframework */,
+				486051342A558321006D5F6E /* Headers */,
 			);
-			name = Headers;
-			path = ../../StaticLibrary/XCFramework/Headers;
+			path = XCFramework;
+			sourceTree = "<group>";
+		};
+		486051342A558321006D5F6E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				486051352A558321006D5F6E /* StaticLibrary.h */,
+				486051362A558321006D5F6E /* StaticHeader.h */,
+				486051372A558321006D5F6E /* PublicTest.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		48BE1A982A4D5DBC00BF3823 = {
 			isa = PBXGroup;
 			children = (
-				48DC3D672A52D79D00C26CE6 /* XCFramework */,
+				486051322A558321006D5F6E /* XCFramework */,
 				48BE1AA32A4D5DBC00BF3823 /* XCframeworkDemo */,
 				48BE1AA22A4D5DBC00BF3823 /* Products */,
 			);
@@ -95,15 +103,6 @@
 				48BE1AB62A4D5DBE00BF3823 /* main.m */,
 			);
 			path = XCframeworkDemo;
-			sourceTree = "<group>";
-		};
-		48DC3D672A52D79D00C26CE6 /* XCFramework */ = {
-			isa = PBXGroup;
-			children = (
-				483C7A2A2A53F7A500805844 /* Headers */,
-				483C7A282A53F7A000805844 /* StaticLibrary.xcframework */,
-			);
-			path = XCFramework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,10 +325,7 @@
 				DEVELOPMENT_TEAM = L4DFRU2343;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/XCFramework\"";
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../StaticLibrary/XCFramework/Headers\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = XCframeworkDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -343,15 +339,26 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
-					"\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework\"",
 					/usr/lib/swift,
 					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc";
+				"OTHER_CFLAGS[sdk=iphoneos*]" = (
+					"$(inherited)",
+					"-fmodule-map-file=\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework/ios-arm64/StaticLibrary.modulemap\"",
+				);
+				"OTHER_CFLAGS[sdk=iphonesimulator*]" = (
+					"$(inherited)",
+					"-fmodule-map-file=\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				"OTHER_SWIFT_FLAGS[sdk=iphoneos*]" = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework/ios-arm64/StaticLibrary.modulemap\"";
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = fanlilin.XCframeworkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STA_PLATFORM_NAME = "";
+				"STA_PLATFORM_NAME[sdk=iphonesimulator*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_VERSION = 5.0;
@@ -369,10 +376,7 @@
 				DEVELOPMENT_TEAM = L4DFRU2343;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/XCFramework\"";
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../StaticLibrary/XCFramework/Headers\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = XCframeworkDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -386,15 +390,20 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
-					"\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework\"",
 					/usr/lib/swift,
 					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fmodule-map-file=\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/XCFramework/StaticLibrary.xcframework/ios/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = fanlilin.XCframeworkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STA_PLATFORM_NAME = "";
+				"STA_PLATFORM_NAME[sdk=iphoneos*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_VERSION = 5.0;

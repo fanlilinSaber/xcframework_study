@@ -27,7 +27,7 @@
   "subspecs": [
     {
       "name": "Code",
-      "source_files": "StaticLibrary/StaticLibrary/*.{h,m}"
+      "source_files": "StaticLibrary/StaticLibrary/*.{h,m,swift}"
     },
     {
       "name": "XCFramework",

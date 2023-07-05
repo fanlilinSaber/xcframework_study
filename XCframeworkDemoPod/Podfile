@@ -6,7 +6,7 @@ target 'XCframeworkDemoPod' do
   # use_frameworks!
 use_modular_headers!
 
- pod 'StaticLibrary/Code', :git => 'https://github.com/fanlilinSaber/xcframework_study.git'
+ pod 'StaticLibrary', :git => 'https://github.com/fanlilinSaber/xcframework_study.git'
 
   # Pods for XCframeworkDemoPod
 

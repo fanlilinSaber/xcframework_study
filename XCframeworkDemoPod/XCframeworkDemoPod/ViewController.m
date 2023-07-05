@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import <StaticLibrary/StaticHeader.h>
+//#import <StaticLibrary/StaticHeader.h>
 @import StaticLibrary;
 
 @interface ViewController ()
@@ -24,6 +24,7 @@
     [PublicTest test];
 
     
+    [PublicSwiftTest test];
 //    [PublicSwiftTest test];
 }
 
