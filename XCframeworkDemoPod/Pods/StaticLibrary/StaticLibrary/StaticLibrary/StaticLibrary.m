@@ -16,8 +16,6 @@
     
     [PrivateTest test];
     
-    [PublicSwiftTest new];
-    
     [PublicSwiftTest test];
 }
 

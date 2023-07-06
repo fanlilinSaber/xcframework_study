@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15F7991987E1BB0AA5383482AC306D29 /* PrivateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FE5B12B35526594B7363C87BDEDD7C /* PrivateTest.m */; };
-		21556C978D9C52B55934716A29F1F427 /* StaticLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A380C8736E1C7E6B50B223131E928E3 /* StaticLibrary-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		522F3D8990EDF734D0C9C6C2C18DB892 /* StaticLibrary-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DAB2B5D7CB09BE4EA8AE2EDDEE63A8 /* StaticLibrary-Bridging-Header.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5552476E84AAEFC9D62CB48038DF79CF /* PrivateTest.h in Headers */ = {isa = PBXBuildFile; fileRef = E1587BA97BA6606DC3FE51CF97A3FD93 /* PrivateTest.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		15F7991987E1BB0AA5383482AC306D29 /* PrivateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B604BD27F9260B4A50331815320EC37 /* PrivateTest.m */; };
+		1CD8B03F1E0AB227F977CC28718CC551 /* StaticLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F5CC1D1343AC76ACC7713E66569F08B /* StaticLibrary.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		21C986571B0EBF12E63C8463C784F2BF /* StaticHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B7365BE40A193F8C25F4B2AA448E790 /* StaticHeader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2B8AD6521C95A584565B9B3635CD228D /* PrivateTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 25EF61859F52177F40DBD63034696465 /* PrivateTest.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		72A6BF3E8F4B9E2CF07C4E4461C1608F /* Pods-XCframeworkDemoPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A71027905A1629C21059DB1E5FB1D2E /* Pods-XCframeworkDemoPod-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7CF49CD5BDCD07682DAEEBDC7FA0A595 /* PublicSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC6C3399428040DE3F6994680E6993 /* PublicSwiftTest.swift */; };
+		7CF49CD5BDCD07682DAEEBDC7FA0A595 /* PublicSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF34D277C2B6EFBCFD3CBDF0BD7A2B5E /* PublicSwiftTest.swift */; };
 		83F100880F425CAC375B6F601D31DF0D /* StaticLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2114331CFA249C62E93749795BE61372 /* StaticLibrary-dummy.m */; };
-		9D82F72544BE4202D9593F70C097CD64 /* StaticLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215E4B3E7994BDEAF790F0B4C7C5A3B /* StaticLibrary.m */; };
-		B4763DB776B5D2F39C4E7F4C99B4A73E /* PublicTest.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D9DBAE7C9DF5E4F1D3E3C7D5677C2E /* PublicTest.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D6F9C8A0485F845AED03F0961459F8DB /* PublicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A6155FA58907A65494B490D97677C1 /* PublicTest.m */; };
-		D790DBD3E550AE36CF2BB11760466DC7 /* StaticHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CC815ACB5D583DD3A5F974820B5D6236 /* StaticHeader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DB1DB3F79A140F1A36C9B0F673541F1D /* StaticLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B362A2D7A5A1DD49581B37A1D9E5B81 /* StaticLibrary.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9D82F72544BE4202D9593F70C097CD64 /* StaticLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = C42D1C997F66070375E9E0F491A36A1F /* StaticLibrary.m */; };
+		A401DEAD200A7A2E73E1FCF67698A988 /* StaticLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A380C8736E1C7E6B50B223131E928E3 /* StaticLibrary-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		ACA01C3B81E61908645AE09D9A998B08 /* PublicTest.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0EC2F85F4E8F0F9894A39F343DAF04 /* PublicTest.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D6F9C8A0485F845AED03F0961459F8DB /* PublicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D89C8359FF66E736A7BC77529493C /* PublicTest.m */; };
 		F04F4CB42AA57F21FDC5174B2786337A /* Pods-XCframeworkDemoPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 326A9C471812365C7B29F7B328594255 /* Pods-XCframeworkDemoPod-dummy.m */; };
+		FB742DA194219D1A2F61B1707FFBCECC /* StaticLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87142819059F5AD061B356073A36BE5E /* StaticLibrary-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,29 +34,29 @@
 
 /* Begin PBXFileReference section */
 		0A71027905A1629C21059DB1E5FB1D2E /* Pods-XCframeworkDemoPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XCframeworkDemoPod-umbrella.h"; sourceTree = "<group>"; };
+		0B604BD27F9260B4A50331815320EC37 /* PrivateTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PrivateTest.m; path = StaticLibrary/StaticLibrary/PrivateTest.m; sourceTree = "<group>"; };
 		0D98F04A7968123E225C65A97B7E54EA /* Pods-XCframeworkDemoPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XCframeworkDemoPod.modulemap"; sourceTree = "<group>"; };
 		133038BA8E436A769A7C94F69F3B1915 /* Pods-XCframeworkDemoPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XCframeworkDemoPod.debug.xcconfig"; sourceTree = "<group>"; };
 		16654417E966BDDA0C53F5723477904B /* Pods-XCframeworkDemoPod-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XCframeworkDemoPod-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2114331CFA249C62E93749795BE61372 /* StaticLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StaticLibrary-dummy.m"; sourceTree = "<group>"; };
 		21552DE15DBA4CAE658144CACBBA460A /* StaticLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.release.xcconfig; sourceTree = "<group>"; };
-		224444531D0F51AB616E3D4E6EC1CEE9 /* libStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		224444531D0F51AB616E3D4E6EC1CEE9 /* StaticLibrary */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = StaticLibrary; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		25EF61859F52177F40DBD63034696465 /* PrivateTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrivateTest.h; path = StaticLibrary/StaticLibrary/PrivateTest.h; sourceTree = "<group>"; };
 		326A9C471812365C7B29F7B328594255 /* Pods-XCframeworkDemoPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XCframeworkDemoPod-dummy.m"; sourceTree = "<group>"; };
+		4B7365BE40A193F8C25F4B2AA448E790 /* StaticHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticHeader.h; path = StaticLibrary/StaticLibrary/StaticHeader.h; sourceTree = "<group>"; };
 		4DE3AEDC885C0CDC1830C0C7E50E616C /* Pods-XCframeworkDemoPod-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XCframeworkDemoPod-acknowledgements.plist"; sourceTree = "<group>"; };
 		53A8E2EA3D6F32CF5E2670372357A39F /* Pods-XCframeworkDemoPod */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-XCframeworkDemoPod"; path = "libPods-XCframeworkDemoPod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A380C8736E1C7E6B50B223131E928E3 /* StaticLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary-umbrella.h"; sourceTree = "<group>"; };
-		6BEC6C3399428040DE3F6994680E6993 /* PublicSwiftTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublicSwiftTest.swift; path = StaticLibrary/StaticLibrary/PublicSwiftTest.swift; sourceTree = "<group>"; };
-		7B362A2D7A5A1DD49581B37A1D9E5B81 /* StaticLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticLibrary.h; path = StaticLibrary/StaticLibrary/StaticLibrary.h; sourceTree = "<group>"; };
-		8215E4B3E7994BDEAF790F0B4C7C5A3B /* StaticLibrary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StaticLibrary.m; path = StaticLibrary/StaticLibrary/StaticLibrary.m; sourceTree = "<group>"; };
-		88FE5B12B35526594B7363C87BDEDD7C /* PrivateTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PrivateTest.m; path = StaticLibrary/StaticLibrary/PrivateTest.m; sourceTree = "<group>"; };
+		6F5CC1D1343AC76ACC7713E66569F08B /* StaticLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticLibrary.h; path = StaticLibrary/StaticLibrary/StaticLibrary.h; sourceTree = "<group>"; };
+		87142819059F5AD061B356073A36BE5E /* StaticLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "StaticLibrary-umbrella.h"; path = "StaticLibrary/StaticLibrary/StaticLibrary-umbrella.h"; sourceTree = "<group>"; };
 		944EF1A2F5380D749088837C86AF2445 /* StaticLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
-		95DAB2B5D7CB09BE4EA8AE2EDDEE63A8 /* StaticLibrary-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "StaticLibrary-Bridging-Header.h"; path = "StaticLibrary/StaticLibrary/StaticLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A5D9DBAE7C9DF5E4F1D3E3C7D5677C2E /* PublicTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PublicTest.h; path = StaticLibrary/StaticLibrary/PublicTest.h; sourceTree = "<group>"; };
-		CC815ACB5D583DD3A5F974820B5D6236 /* StaticHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticHeader.h; path = StaticLibrary/StaticLibrary/StaticHeader.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C42D1C997F66070375E9E0F491A36A1F /* StaticLibrary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StaticLibrary.m; path = StaticLibrary/StaticLibrary/StaticLibrary.m; sourceTree = "<group>"; };
 		D3E8CD8ADF5416CE9A07E197580129D6 /* StaticLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.debug.xcconfig; sourceTree = "<group>"; };
-		E1587BA97BA6606DC3FE51CF97A3FD93 /* PrivateTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrivateTest.h; path = StaticLibrary/StaticLibrary/PrivateTest.h; sourceTree = "<group>"; };
-		E3A6155FA58907A65494B490D97677C1 /* PublicTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PublicTest.m; path = StaticLibrary/StaticLibrary/PublicTest.m; sourceTree = "<group>"; };
+		DC0EC2F85F4E8F0F9894A39F343DAF04 /* PublicTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PublicTest.h; path = StaticLibrary/StaticLibrary/PublicTest.h; sourceTree = "<group>"; };
+		E48D89C8359FF66E736A7BC77529493C /* PublicTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PublicTest.m; path = StaticLibrary/StaticLibrary/PublicTest.m; sourceTree = "<group>"; };
 		E764FB8D2759DF88D622AC9DE2F36E28 /* Pods-XCframeworkDemoPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XCframeworkDemoPod.release.xcconfig"; sourceTree = "<group>"; };
+		EF34D277C2B6EFBCFD3CBDF0BD7A2B5E /* PublicSwiftTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublicSwiftTest.swift; path = StaticLibrary/StaticLibrary/PublicSwiftTest.swift; sourceTree = "<group>"; };
 		FC541F9D2E8C406F0EA7F4EEDBCB00FC /* StaticLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,22 +108,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		706AC48FDE9615AE2DB7176A748093DA /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				E1587BA97BA6606DC3FE51CF97A3FD93 /* PrivateTest.h */,
-				88FE5B12B35526594B7363C87BDEDD7C /* PrivateTest.m */,
-				6BEC6C3399428040DE3F6994680E6993 /* PublicSwiftTest.swift */,
-				A5D9DBAE7C9DF5E4F1D3E3C7D5677C2E /* PublicTest.h */,
-				E3A6155FA58907A65494B490D97677C1 /* PublicTest.m */,
-				CC815ACB5D583DD3A5F974820B5D6236 /* StaticHeader.h */,
-				7B362A2D7A5A1DD49581B37A1D9E5B81 /* StaticLibrary.h */,
-				8215E4B3E7994BDEAF790F0B4C7C5A3B /* StaticLibrary.m */,
-				95DAB2B5D7CB09BE4EA8AE2EDDEE63A8 /* StaticLibrary-Bridging-Header.h */,
-			);
-			name = Code;
-			sourceTree = "<group>";
-		};
 		A76A56616449FA0C324EA40072750E31 /* Pods-XCframeworkDemoPod */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,9 +144,10 @@
 		EEC7FFD41E9F69D556EFA4490C88D847 /* StaticLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				706AC48FDE9615AE2DB7176A748093DA /* Code */,
+				F6B27B9DA7B6CA466565C3365D030E27 /* Code */,
 				15FD7A67334C88A646EF230560FDBE0C /* Support Files */,
 			);
+			name = StaticLibrary;
 			path = StaticLibrary;
 			sourceTree = "<group>";
 		};
@@ -170,32 +155,48 @@
 			isa = PBXGroup;
 			children = (
 				53A8E2EA3D6F32CF5E2670372357A39F /* Pods-XCframeworkDemoPod */,
-				224444531D0F51AB616E3D4E6EC1CEE9 /* libStaticLibrary.a */,
+				224444531D0F51AB616E3D4E6EC1CEE9 /* StaticLibrary */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F6B27B9DA7B6CA466565C3365D030E27 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				25EF61859F52177F40DBD63034696465 /* PrivateTest.h */,
+				0B604BD27F9260B4A50331815320EC37 /* PrivateTest.m */,
+				EF34D277C2B6EFBCFD3CBDF0BD7A2B5E /* PublicSwiftTest.swift */,
+				DC0EC2F85F4E8F0F9894A39F343DAF04 /* PublicTest.h */,
+				E48D89C8359FF66E736A7BC77529493C /* PublicTest.m */,
+				4B7365BE40A193F8C25F4B2AA448E790 /* StaticHeader.h */,
+				6F5CC1D1343AC76ACC7713E66569F08B /* StaticLibrary.h */,
+				C42D1C997F66070375E9E0F491A36A1F /* StaticLibrary.m */,
+				87142819059F5AD061B356073A36BE5E /* StaticLibrary-umbrella.h */,
+			);
+			name = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		01D9A92F8AC48B0D9C9F7520D8991513 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5552476E84AAEFC9D62CB48038DF79CF /* PrivateTest.h in Headers */,
-				B4763DB776B5D2F39C4E7F4C99B4A73E /* PublicTest.h in Headers */,
-				D790DBD3E550AE36CF2BB11760466DC7 /* StaticHeader.h in Headers */,
-				DB1DB3F79A140F1A36C9B0F673541F1D /* StaticLibrary.h in Headers */,
-				522F3D8990EDF734D0C9C6C2C18DB892 /* StaticLibrary-Bridging-Header.h in Headers */,
-				21556C978D9C52B55934716A29F1F427 /* StaticLibrary-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EC15B499C4DCE105C5024C4A9435ABFF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				72A6BF3E8F4B9E2CF07C4E4461C1608F /* Pods-XCframeworkDemoPod-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF77DFD82E892C8E6CDDD8FB093D8E45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B8AD6521C95A584565B9B3635CD228D /* PrivateTest.h in Headers */,
+				ACA01C3B81E61908645AE09D9A998B08 /* PublicTest.h in Headers */,
+				21C986571B0EBF12E63C8463C784F2BF /* StaticHeader.h in Headers */,
+				1CD8B03F1E0AB227F977CC28718CC551 /* StaticLibrary.h in Headers */,
+				FB742DA194219D1A2F61B1707FFBCECC /* StaticLibrary-umbrella.h in Headers */,
+				A401DEAD200A7A2E73E1FCF67698A988 /* StaticLibrary-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +225,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E43FA0E2C849B0B5FCA33F179FBDC8D /* Build configuration list for PBXNativeTarget "StaticLibrary" */;
 			buildPhases = (
-				01D9A92F8AC48B0D9C9F7520D8991513 /* Headers */,
+				FF77DFD82E892C8E6CDDD8FB093D8E45 /* Headers */,
 				DA0D50A47429A546C75136322DE82588 /* Sources */,
 				8FDE2668D28F7CCAA9BE07B88D240B4A /* Frameworks */,
 				CA1968BD846A2BEE2D857FC030EE9D31 /* Copy generated compatibility header */,
@@ -235,7 +236,7 @@
 			);
 			name = StaticLibrary;
 			productName = StaticLibrary;
-			productReference = 224444531D0F51AB616E3D4E6EC1CEE9 /* libStaticLibrary.a */;
+			productReference = 224444531D0F51AB616E3D4E6EC1CEE9 /* StaticLibrary */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -356,7 +357,6 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEFINES_MODULE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/StaticLibrary/StaticLibrary-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULEMAP_FILE = Headers/Public/StaticLibrary/StaticLibrary.modulemap;
@@ -511,7 +511,6 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEFINES_MODULE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/StaticLibrary/StaticLibrary-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULEMAP_FILE = Headers/Public/StaticLibrary/StaticLibrary.modulemap;

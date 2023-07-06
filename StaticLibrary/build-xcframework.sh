@@ -238,26 +238,26 @@ function openXCFramework() {
 function libraryOutput() {
     # 删除旧的Headers文件夹并创建新的
     echo '====> 移除旧的Headers文件'
-    rm -rf "XCFramework/Headers"
-    rm -rf "XCFramework/$PROJECT_NAME.swiftmodule"
-    mkdir -p "XCFramework/Headers"
+#    rm -rf "XCFramework/Headers"
+#    rm -rf "XCFramework/$PROJECT_NAME.swiftmodule"
+#    mkdir -p "XCFramework/Headers"
 #    mkdir -p "XCFramework/$PROJECT_NAME.swiftmodule"
-    log '旧的Headers文件移除完成'
+#    log '旧的Headers文件移除完成'
     
-    log "开始Copy Header文件（为了暴露xx -> Build Phases -> Copy Files的文件）"
-    # copy暴露的头文件
-    source_include="XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/include/$PROJECT_NAME"
-    
-    if [ -e "${source_include}" ]; then
-        cp -r "${source_include}/"* "XCFramework/Headers"
-        log "Copy Header文件完成"
-    fi
+#    log "开始Copy Header文件（为了暴露xx -> Build Phases -> Copy Files的文件）"
+#    # copy暴露的头文件
+#    source_include="XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/include/$PROJECT_NAME"
+#
+#    if [ -e "${source_include}" ]; then
+#        cp -r "${source_include}/"* "XCFramework/Headers"
+#        log "Copy Header文件完成"
+#    fi
     
     # swift文件产生的，给Swift代码调用时需要用到（模拟器和真机分别都需要）
     source_simulator_swiftmodule="XCFramework/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphonesimulator/$PROJECT_NAME.swiftmodule"
     source_ios_swiftmodule="XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/$PROJECT_NAME.swiftmodule"
     
-        # 编译产生的隐藏文件
+    # 编译产生的隐藏文件
     source_simulator_derivedSources="XCFramework/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/$PROJECT_NAME.build/Release-iphonesimulator/$PROJECT_NAME.build/DerivedSources"
     source_ios_derivedSources="XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/$PROJECT_NAME.build/Release-iphoneos/$PROJECT_NAME.build/DerivedSources"
     
@@ -306,7 +306,7 @@ function createUmbrella() {
     simulator_umbrella_file="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/${PROJECT_NAME}-umbrella.h"
     ios_umbrella_file="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/${PROJECT_NAME}-umbrella.h"
     
-# 创建头文件并写入内容（这里不能缩进代码）
+# 模拟器-创建头文件并写入内容（这里不能缩进代码）
 cat > "$simulator_umbrella_file" << EOF
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
@@ -322,7 +322,30 @@ cat > "$simulator_umbrella_file" << EOF
 
 EOF
 
-# 创建头文件并写入内容（这里不能缩进代码）
+    # 暴露模拟器头文件
+    for file in $(find "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator//Headers" -name '*.h'); do
+        # 过滤xxx-Swift.文件
+        if [[ $file == *"-Swift.h"* ]]; then
+            continue
+        fi
+
+        filename="#import \"$(basename "$file")\""
+        log "暴露的文件名 ${filename}"
+# 写入头文件
+cat <<EOF >> "$simulator_umbrella_file"
+${filename}
+EOF
+    done
+
+# simulator_umbrella_file
+cat <<EOF >> "$simulator_umbrella_file"
+
+FOUNDATION_EXPORT double ${PROJECT_NAME}VersionNumber;
+FOUNDATION_EXPORT const unsigned char ${PROJECT_NAME}VersionString[];
+EOF
+
+
+# 真机-创建头文件并写入内容（这里不能缩进代码）
 cat > "$ios_umbrella_file" << EOF
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
@@ -338,8 +361,8 @@ cat > "$ios_umbrella_file" << EOF
 
 EOF
 
-    # 暴露头文件
-    for file in $(find "XCFramework/Headers" -name '*.h'); do
+    # 暴露真机头文件
+    for file in $(find "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/Headers" -name '*.h'); do
         # 过滤xxx-Swift.文件
         if [[ $file == *"-Swift.h"* ]]; then
             continue
@@ -348,22 +371,10 @@ EOF
         filename="#import \"$(basename "$file")\""
         log "暴露的文件名 ${filename}"
 # 写入头文件
-cat <<EOF >> "$simulator_umbrella_file"
-${filename}
-EOF
-
-# 写入头文件
 cat <<EOF >> "$ios_umbrella_file"
 ${filename}
 EOF
     done
-# simulator_umbrella_file
-cat <<EOF >> "$simulator_umbrella_file"
-
-FOUNDATION_EXPORT double ${PROJECT_NAME}VersionNumber;
-FOUNDATION_EXPORT const unsigned char ${PROJECT_NAME}VersionString[];
-EOF
-
 # ios_umbrella_file
 cat <<EOF >> "$ios_umbrella_file"
 
@@ -473,7 +484,7 @@ logGreen "脚本运行时间为：$SHEL_RUN_TIME 秒"
 
 # 6.SKIP_INSTALL（Skip Install）：影响生成的产物位置，YES：产物放在 x/xx/UninstalledProducts目录下的（不在xx.xcarchive目录下），NO：产物放在xx/Products（跟生成的xx.xcarchive在同一级目录）;archive 必须设置 NO
 
-# 7.BUILD_LIBRARIES_FOR_DISTRIBUTION（Build Libraries for Distribution）：构建是否向后兼容的framework，比如：我这里有一个通过Swift5.2.4编译出来的Framework。并且我的项目中Swift版本为5.5.2中使用这个Framework，此时就通过.swiftinterface来保证Framework能够正常的在5.5.2下使用，当开启时，Framework中的代码逻辑会推到运行时确定
+# 7.BUILD_LIBRARY_FOR_DISTRIBUTION（Build Libraries for Distribution）：构建是兼容的framework，比如：我这里有一个通过Swift5.2.4编译出来的Framework。并且我的项目中Swift版本为5.5.2中使用这个Framework，此时就通过.swiftinterface来保证Framework能够正常的在5.5.2下使用，当开启时，Framework中的代码逻辑会推到运行时确定
 
 # 8.-destination：架构类型
 

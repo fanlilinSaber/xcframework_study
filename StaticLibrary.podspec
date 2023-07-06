@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
  
  s.subspec "XCFramework" do |ss|
       ss.vendored_frameworks = ["StaticLibrary/XCFramework/StaticLibrary.xcframework"]
-      ss.source_files = "StaticLibrary/XCFramework/Headers/*"
+      ss.source_files = "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers*"
   end
   
 end

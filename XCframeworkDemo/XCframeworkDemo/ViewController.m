@@ -11,8 +11,6 @@
 #import "XCframeworkDemo-Swift.h"
 @import StaticLibrary;
 
-@import StaticLibrary.Swift;
-
 @interface ViewController ()
 
 @end
