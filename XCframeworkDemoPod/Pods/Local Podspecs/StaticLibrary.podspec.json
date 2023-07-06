@@ -34,7 +34,7 @@
       "vendored_frameworks": [
         "StaticLibrary/XCFramework/StaticLibrary.xcframework"
       ],
-      "source_files": "StaticLibrary/XCFramework/Headers/*"
+      "source_files": "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/*"
     }
   ],
   "swift_version": "5.0"

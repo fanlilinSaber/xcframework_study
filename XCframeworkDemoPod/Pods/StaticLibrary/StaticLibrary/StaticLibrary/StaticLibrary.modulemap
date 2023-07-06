@@ -6,8 +6,9 @@ module StaticLibrary {
 }
 
 //module StaticLibrary.Swift {
-//  header "/Users/fanlilinm1/Library/Developer/Xcode/DerivedData/StaticLibrary-gzefbibwsebdqsevyzpxtvmmagvm/Build/Intermediates.noindex/StaticLibrary.build/Debug-iphonesimulator/StaticLibrary.build/DerivedSources/StaticLibrary-Swift.h"
+//  header "/Users/fanlilin/Library/Developer/Xcode/DerivedData/StaticLibrary-dkhwpfrkidrcezdhyfbylgfpthqh/Build/Intermediates.noindex/StaticLibrary.build/Debug-iphonesimulator/StaticLibrary.build/DerivedSources/StaticLibrary-Swift.h"
 //  requires objc
 //}
+
 
 
