@@ -1,0 +1,23 @@
+PODS:
+  - StaticLibrary (1.0.0):
+    - StaticLibrary/XCFramework (= 1.0.0)
+  - StaticLibrary/XCFramework (1.0.0)
+
+DEPENDENCIES:
+  - StaticLibrary (from `https://github.com/fanlilinSaber/xcframework_study.git`)
+
+EXTERNAL SOURCES:
+  StaticLibrary:
+    :git: https://github.com/fanlilinSaber/xcframework_study.git
+
+CHECKOUT OPTIONS:
+  StaticLibrary:
+    :commit: 8852041b3d6f9a927e646ca2a3fde8ed7f73ea22
+    :git: https://github.com/fanlilinSaber/xcframework_study.git
+
+SPEC CHECKSUMS:
+  StaticLibrary: 916cea82c297b9c4b837cbac1834b911e0d6b16c
+
+PODFILE CHECKSUM: 40a1f740cb0d5ad8b945c375d5f0625e7a07539d
+
+COCOAPODS: 1.11.3

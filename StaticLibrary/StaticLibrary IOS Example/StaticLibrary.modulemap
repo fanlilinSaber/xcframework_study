@@ -1,14 +1,14 @@
-module StaticLibrary {
-  umbrella header "/Users/fanlilin/Desktop/MyGitHub/xcframework_study/StaticLibrary/StaticLibrary/StaticLibrary-umbrella.h"
-  
-  export *
-  module * { export * }
-}
-
-module StaticLibrary.Swift {
-  header "/Users/fanlilin/Library/Developer/Xcode/DerivedData/StaticLibrary-dkhwpfrkidrcezdhyfbylgfpthqh/Build/Intermediates.noindex/StaticLibrary.build/Debug-iphonesimulator/StaticLibrary.build/DerivedSources/StaticLibrary-Swift.h"
-  requires objc
-}
+//module StaticLibrary {
+//  umbrella header "/Users/fanlilin/Desktop/MyGitHub/xcframework_study/StaticLibrary/StaticLibrary/StaticLibrary-umbrella.h"
+//
+//  export *
+//  module * { export * }
+//}
+//
+//module StaticLibrary.Swift {
+//  header "/Users/fanlilin/Library/Developer/Xcode/DerivedData/StaticLibrary-dkhwpfrkidrcezdhyfbylgfpthqh/Build/Intermediates.noindex/StaticLibrary.build/Debug-iphonesimulator/StaticLibrary.build/DerivedSources/StaticLibrary-Swift.h"
+//  requires objc
+//}
 
 
 

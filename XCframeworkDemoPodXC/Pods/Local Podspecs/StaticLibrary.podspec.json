@@ -1,0 +1,45 @@
+{
+  "name": "StaticLibrary",
+  "version": "1.0.0",
+  "summary": "StaticLibrary",
+  "homepage": "https://github.com/fanlilinSaber/xcframework_study",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Fan Li Lin": "824589131.com"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "swift_versions": "5.0",
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/fanlilinSaber/xcframework_study.git",
+    "tag": "v1.0.0"
+  },
+  "default_subspecs": "XCFramework",
+  "subspecs": [
+    {
+      "name": "Code",
+      "source_files": "StaticLibrary/StaticLibrary/*.{h,m,swift}"
+    },
+    {
+      "name": "XCFramework",
+      "vendored_frameworks": [
+        "StaticLibrary/XCFramework/StaticLibrary.xcframework"
+      ],
+      "source_files": "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/*",
+      "user_target_xcconfig": {
+        "OTHER_CFLAGS": "$(inherited) -fmodule-map-file=\"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap\"",
+        "OTHER_SWIFT_FLAGS": "$(inherited)  -Xcc -fmodule-map-file=\"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap\""
+      }
+    }
+  ],
+  "swift_version": "5.0"
+}

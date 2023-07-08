@@ -7,7 +7,7 @@
 
 import UIKit
 //import StaticLibrary
-import StaticLibrary
+//import StaticLibrary
 
 public class TestSwift: NSObject {
 
