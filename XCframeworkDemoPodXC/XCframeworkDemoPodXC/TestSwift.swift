@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import StaticLibrary
+//import StaticLibrary
 
 class TestSwift {
 
     public func test() {
-        PublicTest.test()
-
-        StaticLibrary.test()
+//        PublicTest.test()
+//
+//        StaticLibrary.test()
         
-        PublicSwiftTest.test()
+//        PublicSwiftTest.test()
 
     }
 }

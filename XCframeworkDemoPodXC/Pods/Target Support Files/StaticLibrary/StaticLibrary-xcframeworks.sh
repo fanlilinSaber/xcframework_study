@@ -17,11 +17,11 @@ RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 variant_for_slice()
 {
   case "$1" in
-  "StaticLibrary.xcframework/ios-x86_64-simulator")
-    echo "simulator"
-    ;;
   "StaticLibrary.xcframework/ios-arm64")
     echo ""
+    ;;
+  "StaticLibrary.xcframework/ios-x86_64-simulator")
+    echo "simulator"
     ;;
   esac
 }
@@ -29,11 +29,11 @@ variant_for_slice()
 archs_for_slice()
 {
   case "$1" in
-  "StaticLibrary.xcframework/ios-x86_64-simulator")
-    echo "x86_64"
-    ;;
   "StaticLibrary.xcframework/ios-arm64")
     echo "arm64"
+    ;;
+  "StaticLibrary.xcframework/ios-x86_64-simulator")
+    echo "x86_64"
     ;;
   esac
 }
@@ -117,5 +117,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework" "StaticLibrary/XCFramework" "library" "ios-x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework" "StaticLibrary/XCFramework" "library" "ios-arm64" "ios-x86_64-simulator"
 

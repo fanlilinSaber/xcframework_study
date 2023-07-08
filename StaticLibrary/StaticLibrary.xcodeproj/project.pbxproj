@@ -439,7 +439,7 @@
 				);
 				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -473,7 +473,7 @@
 				);
 				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
