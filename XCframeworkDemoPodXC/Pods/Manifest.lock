@@ -12,11 +12,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   StaticLibrary:
-    :commit: 0f0df6a5a23389c879abefd8a7152fe0f3bb6d15
+    :commit: 52feb5120aa1633b0743f5a22f220d70fe40af14
     :git: https://github.com/fanlilinSaber/xcframework_study.git
 
 SPEC CHECKSUMS:
-  StaticLibrary: 916cea82c297b9c4b837cbac1834b911e0d6b16c
+  StaticLibrary: 499c51f78547d55faa27fcbf7961f4d47d2d3998
 
 PODFILE CHECKSUM: 40a1f740cb0d5ad8b945c375d5f0625e7a07539d
 

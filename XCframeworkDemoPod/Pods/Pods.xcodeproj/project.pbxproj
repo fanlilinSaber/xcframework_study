@@ -40,7 +40,7 @@
 		16654417E966BDDA0C53F5723477904B /* Pods-XCframeworkDemoPod-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XCframeworkDemoPod-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2114331CFA249C62E93749795BE61372 /* StaticLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StaticLibrary-dummy.m"; sourceTree = "<group>"; };
 		21552DE15DBA4CAE658144CACBBA460A /* StaticLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.release.xcconfig; sourceTree = "<group>"; };
-		224444531D0F51AB616E3D4E6EC1CEE9 /* StaticLibrary */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = StaticLibrary; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		224444531D0F51AB616E3D4E6EC1CEE9 /* libStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		25EF61859F52177F40DBD63034696465 /* PrivateTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrivateTest.h; path = StaticLibrary/StaticLibrary/PrivateTest.h; sourceTree = "<group>"; };
 		326A9C471812365C7B29F7B328594255 /* Pods-XCframeworkDemoPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XCframeworkDemoPod-dummy.m"; sourceTree = "<group>"; };
 		4B7365BE40A193F8C25F4B2AA448E790 /* StaticHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticHeader.h; path = StaticLibrary/StaticLibrary/StaticHeader.h; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		6F5CC1D1343AC76ACC7713E66569F08B /* StaticLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaticLibrary.h; path = StaticLibrary/StaticLibrary/StaticLibrary.h; sourceTree = "<group>"; };
 		87142819059F5AD061B356073A36BE5E /* StaticLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "StaticLibrary-umbrella.h"; path = "StaticLibrary/StaticLibrary/StaticLibrary-umbrella.h"; sourceTree = "<group>"; };
 		944EF1A2F5380D749088837C86AF2445 /* StaticLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C42D1C997F66070375E9E0F491A36A1F /* StaticLibrary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StaticLibrary.m; path = StaticLibrary/StaticLibrary/StaticLibrary.m; sourceTree = "<group>"; };
 		D3E8CD8ADF5416CE9A07E197580129D6 /* StaticLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StaticLibrary.debug.xcconfig; sourceTree = "<group>"; };
 		DC0EC2F85F4E8F0F9894A39F343DAF04 /* PublicTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PublicTest.h; path = StaticLibrary/StaticLibrary/PublicTest.h; sourceTree = "<group>"; };
@@ -147,7 +147,6 @@
 				F6B27B9DA7B6CA466565C3365D030E27 /* Code */,
 				15FD7A67334C88A646EF230560FDBE0C /* Support Files */,
 			);
-			name = StaticLibrary;
 			path = StaticLibrary;
 			sourceTree = "<group>";
 		};
@@ -155,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				53A8E2EA3D6F32CF5E2670372357A39F /* Pods-XCframeworkDemoPod */,
-				224444531D0F51AB616E3D4E6EC1CEE9 /* StaticLibrary */,
+				224444531D0F51AB616E3D4E6EC1CEE9 /* libStaticLibrary.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,7 +235,7 @@
 			);
 			name = StaticLibrary;
 			productName = StaticLibrary;
-			productReference = 224444531D0F51AB616E3D4E6EC1CEE9 /* StaticLibrary */;
+			productReference = 224444531D0F51AB616E3D4E6EC1CEE9 /* libStaticLibrary.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -362,6 +361,7 @@
 				MODULEMAP_FILE = Headers/Public/StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_MODULE_NAME = StaticLibrary;
 				PRODUCT_NAME = StaticLibrary;
@@ -369,6 +369,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INSTALL_MODULE = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -516,6 +518,7 @@
 				MODULEMAP_FILE = Headers/Public/StaticLibrary/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_MODULE_NAME = StaticLibrary;
 				PRODUCT_NAME = StaticLibrary;
@@ -523,6 +526,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INSTALL_MODULE = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

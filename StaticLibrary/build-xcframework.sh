@@ -330,7 +330,7 @@ EOF
         fi
 
         filename="#import \"$(basename "$file")\""
-        log "暴露的文件名 ${filename}"
+        log "暴露模拟器头文件 ${filename}"
 # 写入头文件
 cat <<EOF >> "$simulator_umbrella_file"
 ${filename}
@@ -369,7 +369,7 @@ EOF
         fi
 
         filename="#import \"$(basename "$file")\""
-        log "暴露的文件名 ${filename}"
+        log "暴露真机头文件 ${filename}"
 # 写入头文件
 cat <<EOF >> "$ios_umbrella_file"
 ${filename}

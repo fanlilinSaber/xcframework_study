@@ -1,12 +1,12 @@
-//module StaticLibrary {
-//  umbrella header "StaticLibrary-umbrella.h"
-//
-//  export *
-//  module * { export * }
-//}
-//
-//
-//module StaticLibrary.Swift {
-// header "Swift Compatibility Header/StaticLibrary-Swift.h"
-// requires objc
-//}
+module StaticLibrary {
+  umbrella header "StaticLibrary-umbrella.h"
+  
+  export *
+  module * { export * }
+}
+
+
+module StaticLibrary.Swift {
+ header "Swift Compatibility Header/StaticLibrary-Swift.h"
+ requires objc
+}

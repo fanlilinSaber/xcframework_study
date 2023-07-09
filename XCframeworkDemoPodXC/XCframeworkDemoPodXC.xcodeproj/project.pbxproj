@@ -369,7 +369,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-fmodule-map-file=\"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"",
+					"-fmodule-map-file=\"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -378,11 +378,11 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"$(SRCROOT)/Pods/StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-x86_64-simulator/StaticLibrary.modulemap\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS $(inherited) -Xcc -fmodule-map-file=\"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "ZHONG-JUN-KE-JI.XCframeworkDemoPodXC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(inherited)";
+				SWIFT_INCLUDE_PATHS = "$(inherited) \"${PODS_CONFIGURATION_BUILD_DIR}/StaticLibrary\" \"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCframeworkDemoPodXC/XCframeworkDemoPodXC-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -425,11 +425,11 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS $(inherited) -Xcc -fmodule-map-file=\"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "ZHONG-JUN-KE-JI.XCframeworkDemoPodXC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(inherited)";
+				SWIFT_INCLUDE_PATHS = "$(inherited) $(inherited) \"${PODS_CONFIGURATION_BUILD_DIR}/StaticLibrary\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCframeworkDemoPodXC/XCframeworkDemoPodXC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

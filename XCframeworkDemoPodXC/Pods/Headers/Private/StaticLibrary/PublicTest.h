@@ -1,1 +1,1 @@
-../../../StaticLibrary/StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/PublicTest.h
+../../../StaticLibrary/StaticLibrary/XCFramework/Headers/PublicTest.h
