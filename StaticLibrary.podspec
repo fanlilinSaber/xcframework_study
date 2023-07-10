@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.default_subspec = 'XCFramework'
     
     s.subspec "Code" do |code|
-        code.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h,m}"
+        code.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h}"
         code.source_files = "StaticLibrary/StaticLibrary/**/*.{h,m,swift}"
     end
  
