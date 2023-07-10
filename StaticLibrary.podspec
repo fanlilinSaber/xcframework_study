@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
       ss.user_target_xcconfig = {
           'OTHER_CFLAGS' => '$(inherited) -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
           'OTHER_SWIFT_FLAGS' => '$(inherited)  -Xcc -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
-          'IMPORT_PATHS' => '$(inherited) “${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework"',
+          'SWIFT_INCLUDE_PATHS' => '$(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework"',
           }
   end
   
