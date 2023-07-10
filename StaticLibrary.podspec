@@ -12,7 +12,8 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/fanlilinSaber/xcframework_study.git', :tag => "v#{s.version}" }
  s.swift_version = "5.0"
 
- if ENV['use_code'] == 'true'
+  use_code = defined_in_podfile? ? podfile.pod_target_xcconfig['USE_CODE'] : false
+ if use_code == 'true'
  s.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h,m}"
  s.source_files = "StaticLibrary/StaticLibrary/**/*.{h,m,swift}"
  else
