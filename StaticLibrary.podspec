@@ -13,7 +13,8 @@ Pod::Spec.new do |s|
  s.swift_version = "5.0"
 
  if ENV['use_code'] == 'true'
- s.source_files = "StaticLibrary/StaticLibrary/*.{h,m,swift}"
+ s.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h,m}"
+ s.source_files = "StaticLibrary/StaticLibrary/**/*.{h,m,swift}"
  else
  s.vendored_frameworks = ["StaticLibrary/XCFramework/StaticLibrary.xcframework"]
       s.source_files = "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/*"

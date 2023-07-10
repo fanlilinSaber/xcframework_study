@@ -6,17 +6,16 @@
 //
 
 import UIKit
-//import StaticLibrary
-//import StaticLibrary
+import StaticLibrary
 
 public class TestSwift: NSObject {
 
     @objc public static func test() {
         print("TestSwift")
         
-//        PublicSwiftTest.test()
+        PublicSwiftTest.test()
         
-//        PublicTest.test();
+        PublicTest.test();
         
     }
 }

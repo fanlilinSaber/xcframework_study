@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		480B8D422A4E795D00E598C4 /* PublicSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */; };
 		480B8D452A4E7E3400E598C4 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D442A4E7E3400E598C4 /* TestSwift.swift */; };
-		480B8D472A4E7F2F00E598C4 /* StaticHeader.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 480B8D462A4E7E9100E598C4 /* StaticHeader.h */; };
 		485936FF2A567ECB00F98122 /* libStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE1A672A4D307900BF3823 /* libStaticLibrary.a */; };
 		48BE1A6C2A4D307900BF3823 /* StaticLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1A6B2A4D307900BF3823 /* StaticLibrary.m */; };
 		48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */; };
@@ -42,7 +41,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				480B8D472A4E7F2F00E598C4 /* StaticHeader.h in Copy Files */,
 				48BE1AD52A4D851C00BF3823 /* PublicTest.h in Copy Files */,
 				48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in Copy Files */,
 			);
@@ -56,7 +54,6 @@
 		480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSwiftTest.swift; sourceTree = "<group>"; };
 		480B8D432A4E7E3300E598C4 /* StaticLibrary IOS Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary IOS Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		480B8D442A4E7E3400E598C4 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
-		480B8D462A4E7E9100E598C4 /* StaticHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticHeader.h; sourceTree = "<group>"; };
 		485937002A56A63900F98122 /* StaticLibrary.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
 		4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary-umbrella.h"; sourceTree = "<group>"; };
 		48BE1A672A4D307900BF3823 /* libStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +96,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		480B0BBC2A5BB03C007FA221 /* Pubilc */ = {
+			isa = PBXGroup;
+			children = (
+				480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */,
+				48BE1AD22A4D850000BF3823 /* PublicTest.h */,
+				48BE1AD32A4D850000BF3823 /* PublicTest.m */,
+				48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */,
+				48BE1A6B2A4D307900BF3823 /* StaticLibrary.m */,
+			);
+			path = Pubilc;
+			sourceTree = "<group>";
+		};
+		480B0BBD2A5BB052007FA221 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				2758102E2A55CFF100319431 /* StaticLibrary.modulemap */,
+				4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */,
+				48BE1ACA2A4D6CED00BF3823 /* PrivateTest.h */,
+				48BE1ACB2A4D6CED00BF3823 /* PrivateTest.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		48BE1A5E2A4D307900BF3823 = {
 			isa = PBXGroup;
 			children = (
@@ -121,16 +141,8 @@
 		48BE1A692A4D307900BF3823 /* StaticLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				48BE1ACA2A4D6CED00BF3823 /* PrivateTest.h */,
-				48BE1ACB2A4D6CED00BF3823 /* PrivateTest.m */,
-				480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */,
-				48BE1AD22A4D850000BF3823 /* PublicTest.h */,
-				48BE1AD32A4D850000BF3823 /* PublicTest.m */,
-				480B8D462A4E7E9100E598C4 /* StaticHeader.h */,
-				4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */,
-				48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */,
-				48BE1A6B2A4D307900BF3823 /* StaticLibrary.m */,
-				2758102E2A55CFF100319431 /* StaticLibrary.modulemap */,
+				480B0BBD2A5BB052007FA221 /* Private */,
+				480B0BBC2A5BB03C007FA221 /* Pubilc */,
 			);
 			path = StaticLibrary;
 			sourceTree = "<group>";
@@ -437,7 +449,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
+				MODULEMAP_FILE = StaticLibrary/Private/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "$(inherited) -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -471,7 +483,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = StaticLibrary/StaticLibrary.modulemap;
+				MODULEMAP_FILE = StaticLibrary/Private/StaticLibrary.modulemap;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "$(inherited) -import-underlying-module -Xcc -fmodule-map-file=\"${SRCROOT}/${MODULEMAP_FILE}\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,7 +518,10 @@
 				);
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}/lib/**";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "fanlilin.StaticLibrary-IOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,7 +556,10 @@
 				);
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}/lib/**";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "fanlilin.StaticLibrary-IOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";

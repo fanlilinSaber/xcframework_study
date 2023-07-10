@@ -6,8 +6,8 @@
 //
 
 #import "ViewController.h"
-#import "StaticHeader.h"
 //#import "StaticLibrary-Swift.h"
+#import "StaticLibrary-umbrella.h"
 
 @interface ViewController ()
 
