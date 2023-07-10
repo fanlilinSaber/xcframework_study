@@ -12,8 +12,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/fanlilinSaber/xcframework_study.git', :tag => "v#{s.version}" }
  s.swift_version = "5.0"
 
- s.custom_attribute :use_code, false
- if spec.attributes[:use_code]
+ if defined?(use_code) && use_code
  s.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h,m}"
  s.source_files = "StaticLibrary/StaticLibrary/**/*.{h,m,swift}"
  else
