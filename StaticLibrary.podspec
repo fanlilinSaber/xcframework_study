@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     s.subspec "Code" do |code|
         code.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h}"
         code.source_files = "StaticLibrary/StaticLibrary/**/*.{h,m,swift}"
-        code.exclude_files = 'StaticLibrary/StaticLibrary/Pubilc/StaticLibrary-umbrella.h'
+        code.exclude_files = 'StaticLibrary/StaticLibrary/Private/StaticLibrary-umbrella.h', 'StaticLibrary/StaticLibrary/Private/StaticLibrary.modulemap'
     end
  
     s.subspec "XCFramework" do |xcframework|
