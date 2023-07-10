@@ -12,18 +12,18 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/fanlilinSaber/xcframework_study.git', :tag => "v#{s.version}" }
  s.swift_version = "5.0"
 
-  use_code = defined_in_podfile? ? podfile.pod_target_xcconfig['USE_CODE'] : false
- if use_code == 'true'
+ custom_params = defined?(custom_params) ? custom_params : {}
+ if custom_params == 'true'
  s.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h,m}"
  s.source_files = "StaticLibrary/StaticLibrary/**/*.{h,m,swift}"
  else
  s.vendored_frameworks = ["StaticLibrary/XCFramework/StaticLibrary.xcframework"]
-      s.source_files = "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/*"
-      s.user_target_xcconfig = {
-          'OTHER_CFLAGS' => '$(inherited) -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
-          'OTHER_SWIFT_FLAGS' => '-Xcc -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
-          'SWIFT_INCLUDE_PATHS' => '"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework"',
-          }
+ s.source_files = "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/*"
+ s.user_target_xcconfig = {
+    'OTHER_CFLAGS' => '$(inherited) -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
+    'OTHER_SWIFT_FLAGS' => '-Xcc -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
+    'SWIFT_INCLUDE_PATHS' => '"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework"',
+}
  end
  
 end
