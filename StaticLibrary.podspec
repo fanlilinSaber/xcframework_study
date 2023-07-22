@@ -22,11 +22,7 @@ Pod::Spec.new do |s|
     s.subspec "XCFramework" do |xcframework|
         xcframework.vendored_frameworks = ["StaticLibrary/XCFramework/StaticLibrary.xcframework"]
         xcframework.source_files = "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/*"
-        xcframework.user_target_xcconfig = {
-            'OTHER_CFLAGS' => '$(inherited) -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
-            'OTHER_SWIFT_FLAGS' => '-Xcc -fmodule-map-file="${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework/StaticLibrary.modulemap"',
-            'SWIFT_INCLUDE_PATHS' => '"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLibrary/XCFramework"',
-        }
+        xcframework.public_header_files =  "StaticLibrary/XCFramework/StaticLibrary.xcframework/ios-arm64/Headers/*.h"
     end
     
 end

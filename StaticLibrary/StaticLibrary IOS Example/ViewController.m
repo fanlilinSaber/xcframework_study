@@ -7,7 +7,8 @@
 
 #import "ViewController.h"
 //#import "StaticLibrary-Swift.h"
-#import "StaticLibrary-umbrella.h"
+//#import "StaticLibrary-umbrella.h"
+@import StaticLibrary;
 
 @interface ViewController ()
 
@@ -24,6 +25,7 @@
     [PublicTest test];
 
 //    [PublicSwiftTest test];
+
 }
 
 

@@ -5,6 +5,7 @@ module StaticLibrary {
   module * { export * }
 }
 
-
-
-
+//module StaticLibrary.Swift {
+// header "StaticLibrary-Swift.h"
+// requires objc
+//}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27489AA22A6C368200A0853B /* StaticLibrary.modulemap in Copy Files */ = {isa = PBXBuildFile; fileRef = 2758102E2A55CFF100319431 /* StaticLibrary.modulemap */; };
+		27489AA32A6C368500A0853B /* StaticLibrary-umbrella.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */; };
 		480B8D422A4E795D00E598C4 /* PublicSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */; };
 		480B8D452A4E7E3400E598C4 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D442A4E7E3400E598C4 /* TestSwift.swift */; };
 		485936FF2A567ECB00F98122 /* libStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE1A672A4D307900BF3823 /* libStaticLibrary.a */; };
@@ -41,6 +43,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				27489AA32A6C368500A0853B /* StaticLibrary-umbrella.h in Copy Files */,
+				27489AA22A6C368200A0853B /* StaticLibrary.modulemap in Copy Files */,
 				48BE1AD52A4D851C00BF3823 /* PublicTest.h in Copy Files */,
 				48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in Copy Files */,
 			);
@@ -54,7 +58,6 @@
 		480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSwiftTest.swift; sourceTree = "<group>"; };
 		480B8D432A4E7E3300E598C4 /* StaticLibrary IOS Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary IOS Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		480B8D442A4E7E3400E598C4 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
-		485937002A56A63900F98122 /* StaticLibrary.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
 		4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary-umbrella.h"; sourceTree = "<group>"; };
 		48BE1A672A4D307900BF3823 /* libStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLibrary.h; sourceTree = "<group>"; };
@@ -156,7 +159,6 @@
 				48BE1A7D2A4D30C900BF3823 /* SceneDelegate.m */,
 				48BE1A7F2A4D30C900BF3823 /* ViewController.h */,
 				48BE1A802A4D30C900BF3823 /* ViewController.m */,
-				485937002A56A63900F98122 /* StaticLibrary.modulemap */,
 				480B8D442A4E7E3400E598C4 /* TestSwift.swift */,
 				48BE1A822A4D30C900BF3823 /* Main.storyboard */,
 				48BE1A852A4D30CA00BF3823 /* Assets.xcassets */,
@@ -516,16 +518,22 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "${SRCROOT}/lib/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"",
+					"-fmodule-map-file=\"$(SRCROOT)/StaticLibrary/Private/StaticLibrary.modulemap\"",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/StaticLibrary/Private/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "fanlilin.StaticLibrary-IOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StaticLibrary IOS Example/StaticLibrary IOS Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -554,16 +562,22 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "${SRCROOT}/lib/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"",
+					"-fmodule-map-file=\"$(SRCROOT)/StaticLibrary/Private/StaticLibrary.modulemap\"",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/StaticLibrary IOS Example/StaticLibrary.modulemap\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=\"$(SRCROOT)/StaticLibrary/Private/StaticLibrary.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "fanlilin.StaticLibrary-IOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StaticLibrary IOS Example/StaticLibrary IOS Example-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

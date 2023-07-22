@@ -12,10 +12,10 @@ public class TestSwift: NSObject {
 
     @objc public static func test() {
         print("TestSwift")
-        
+
         PublicSwiftTest.test()
-        
+
         PublicTest.test();
-        
+
     }
 }
