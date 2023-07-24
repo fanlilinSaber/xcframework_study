@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27489AA22A6C368200A0853B /* StaticLibrary.modulemap in Copy Files */ = {isa = PBXBuildFile; fileRef = 2758102E2A55CFF100319431 /* StaticLibrary.modulemap */; };
-		27489AA32A6C368500A0853B /* StaticLibrary-umbrella.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 4860513C2A558D36006D5F6E /* StaticLibrary-umbrella.h */; };
 		480B8D422A4E795D00E598C4 /* PublicSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */; };
 		480B8D452A4E7E3400E598C4 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B8D442A4E7E3400E598C4 /* TestSwift.swift */; };
 		485936FF2A567ECB00F98122 /* libStaticLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE1A672A4D307900BF3823 /* libStaticLibrary.a */; };
@@ -43,8 +41,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				27489AA32A6C368500A0853B /* StaticLibrary-umbrella.h in Copy Files */,
-				27489AA22A6C368200A0853B /* StaticLibrary.modulemap in Copy Files */,
 				48BE1AD52A4D851C00BF3823 /* PublicTest.h in Copy Files */,
 				48BE1A6D2A4D307900BF3823 /* StaticLibrary.h in Copy Files */,
 			);

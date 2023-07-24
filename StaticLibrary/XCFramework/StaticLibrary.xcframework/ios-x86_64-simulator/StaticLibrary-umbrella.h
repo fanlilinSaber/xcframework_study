@@ -11,7 +11,6 @@
 #endif
 
 #import "StaticLibrary.h"
-#import "StaticHeader.h"
 #import "PublicTest.h"
 
 FOUNDATION_EXPORT double StaticLibraryVersionNumber;
