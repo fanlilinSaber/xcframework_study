@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
     s.source = { :git => 'https://github.com/fanlilinSaber/xcframework_study.git', :tag => "v#{s.version}" }
     s.swift_version = "5.0"
     s.default_subspec = 'XCFramework'
+    s.dependency "SnapKit"
     
     s.subspec "Code" do |code|
         code.public_header_files = "StaticLibrary/StaticLibrary/Pubilc/*.{h}"
