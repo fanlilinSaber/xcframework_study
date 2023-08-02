@@ -7,12 +7,14 @@
 
 # 📢* * begin 以下参数默认会自动获取，如果工程结构比较复杂的可以手动设置
 
+# 工程（YYY.xcworkspace）的根路径；默认 = build-xcframework.sh脚本同级目录
+ROOT_PATH='.'
 # 需要build的工程名
 PROJECT_NAME=''
-# scheme名，默认情况下和工程名一样，如果不一样手动设置即可（需要把工程里对应的scheme勾选出来）
-SCHEME_NAME=''
 # 项目组织形式，分为 xcodeproj 和 xcworkspace 的方式
 PROJEC_FORM=''
+# scheme名，默认情况下和工程名一样，如果不一样手动设置即可（需要把工程里对应的scheme勾选出来）
+SCHEME_NAME=''
 # 打包出来的 xcframework 名字；默认 = PROJECT_NAME名
 FRAMEWORK_NAME=''
 # 主podspec文件的路径；默认 = build-xcframework.sh脚本同级目录
@@ -20,22 +22,23 @@ PODSPEC_PATH=''
 # README.md文件路径；默认 = build-xcframework.sh脚本同级目录
 README_PATH=''
 # 是否自动上传提交到子仓库
-AUTO_PUSH='NO'
+AUTO_PUSH='YES'
 # 📢* * end
 
 # ================== 固定参数 ==================
 
 # 模拟器打包环境预设
-BUILD_SIMULATOR_INTER_VARIABLES="VALIDATE_WORKSPACE=NO MACH_O_TYPE=staticlib ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= DEBUG_INFORMATION_FORMAT=dwarf SKIP_INSTALL=NO EXCLUDED_ARCHS=arm64 BUILD_LIBRARY_FOR_DISTRIBUTION=YES"
+BUILD_SIMULATOR_INTER_VARIABLES="VALIDATE_WORKSPACE=NO MACH_O_TYPE=staticlib ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= DEBUG_INFORMATION_FORMAT=dwarf SKIP_INSTALL=NO EXCLUDED_ARCHS=arm64"
 
 # 真机打包环境预设
-BUILD_IPHONEOS_INTER_VARIABLES="VALIDATE_WORKSPACE=NO ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= SKIP_INSTALL=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=NO CLANG_ENABLE_CODE_COVERAGE=NO STRIP_INSTALLED_PRODUCT=NO MACH_O_TYPE=staticlib DEBUG_INFORMATION_FORMAT=dwarf BUILD_LIBRARY_FOR_DISTRIBUTION=YES"
+BUILD_IPHONEOS_INTER_VARIABLES="VALIDATE_WORKSPACE=NO ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= SKIP_INSTALL=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=NO CLANG_ENABLE_CODE_COVERAGE=NO STRIP_INSTALLED_PRODUCT=NO MACH_O_TYPE=staticlib DEBUG_INFORMATION_FORMAT=dwarf"
 
+# XCFramework根目录
+XCF_PATH="XCFramework"
 # 真机和模拟器xcarchive路径
-ARCHIVE_PATH="XCFramework/XCArchive"
-
+ARCHIVE_PATH="$XCF_PATH/XCArchive"
 # 编译过程产生的缓存文件路径
-DERIVEDDAT_PATH="XCFramework/Build"
+DERIVEDDAT_PATH="$XCF_PATH/Build"
 
 # ================== 临时变量 ==================
 
@@ -87,7 +90,7 @@ function preBuildCheck() {
     if [ $flag = "0" ]; then
         log "自动获取以'xcworkspace'形式编译的工程名"
         # 获取当前目录下.xcworkspace的文件
-         for file in $(find "." -maxdepth 1 -name '*.xcworkspace'); do
+         for file in $(find $ROOT_PATH -maxdepth 1 -name '*.xcworkspace'); do
             log "遍历到的文件名 ${file}"
             
             PROJEC_FORM='workspace'
@@ -99,7 +102,7 @@ function preBuildCheck() {
     # 以.xcodeproj形式查找
     if [ $flag = "0" ]; then
         log "自动获取以'xcodeproj'形式编译的工程名"
-        for file in $(find "." -maxdepth 1 -name '*.xcodeproj'); do
+        for file in $(find $ROOT_PATH -maxdepth 1 -name '*.xcodeproj'); do
             log "遍历到的文件名 ${file}"
             
             PROJEC_FORM='project'
@@ -144,9 +147,26 @@ function removeBuild() {
     echo
     echo '====> Clean编译环境'
     # clean一下Release编译环境
-    xcrun xcodebuild clean -$PROJEC_FORM $PROJECT_NAME.$PROJEC_EXTENSION -scheme $PROJECT_NAME -configuration Release
+    xcrun xcodebuild clean -$PROJEC_FORM $ROOT_PATH/$PROJECT_NAME.$PROJEC_EXTENSION -scheme $PROJECT_NAME -configuration Release
     logHigh "编译环境Clean完成"
     echo
+}
+
+function adjustBuiledSh() {
+    # Pods-resources.sh路径如果不是这个修改成自己项目的路径
+    resources_sh="Pods/Target Support Files/Pods-${SCHEME_NAME}/Pods-${SCHEME_NAME}-resources.sh"
+    if [ -e "${resources_sh}" ]; then
+        log "检测到有Pods-${SCHEME_NAME}-resources.sh文件需要重新校正脚本；避免写入不必要的资源"
+        if grep -q "The MACH_O_TYPE is" "${resources_sh}"; then
+            log "文件中已存在校正脚本"
+        else
+            new_text="echo \"The MACH_O_TYPE is: \$MACH_O_TYPE\"\nif [ \"\$MACH_O_TYPE\" == \"staticlib\" ]; then\n  exit 0\nfi"
+
+            sed -i  "" "1s/^/$new_text\\n/" "${resources_sh}"
+        fi
+        logHigh "校正${SCHEME_NAME}-resources.sh 完成"
+        echo
+    fi
 }
 
 function startBuild() {
@@ -156,7 +176,7 @@ function startBuild() {
     # 输出目录为 XCFramework/Build/Device
     echo '====> 开始编译模拟器和真机Release'
     xcrun xcodebuild archive $BUILD_SIMULATOR_INTER_VARIABLES \
-            -$PROJEC_FORM $PROJECT_NAME.$PROJEC_EXTENSION \
+            -$PROJEC_FORM $ROOT_PATH/$PROJECT_NAME.$PROJEC_EXTENSION \
             -scheme $SCHEME_NAME \
             -configuration Release \
             -destination 'generic/platform=iOS Simulator' \
@@ -167,7 +187,7 @@ function startBuild() {
             -quiet \
             & \
     xcrun xcodebuild archive $BUILD_IPHONEOS_INTER_VARIABLES \
-            -$PROJEC_FORM $PROJECT_NAME.$PROJEC_EXTENSION \
+            -$PROJEC_FORM $ROOT_PATH/$PROJECT_NAME.$PROJEC_EXTENSION \
             -scheme $SCHEME_NAME \
             -configuration Release \
             -destination 'generic/platform=iOS' \
@@ -184,10 +204,11 @@ function startBuild() {
 function createXCFramework() {
     echo '====> 开始移除旧的xcframework包'
     echo '====> Command line invocation:'
-    echo "====> rm -rf XCFramework/${FRAMEWORK_NAME}.xcframework"
+    echo "====> rm -rf $XCF_PATH/${FRAMEWORK_NAME}.xcframework"
     
     # 移除原来的xcframework包
-    rm -rf XCFramework/${FRAMEWORK_NAME}.xcframework
+    rm -rf ${XCF_PATH}/${FRAMEWORK_NAME}.xcframework
+    rm -rf ${XCF_PATH}/${FRAMEWORK_NAME}.xcframework.zip
     logHigh '旧的xcframework包移除完成'
     echo
     
@@ -208,9 +229,9 @@ function createXCFramework() {
     if [ $productType = "a" ]; then
         xcrun xcodebuild -create-xcframework \
             -allow-internal-distribution \
-            -library ${ARCHIVE_PATH}/simulator.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a -headers XCFramework/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphonesimulator/include/$PROJECT_NAME \
-            -library ${ARCHIVE_PATH}/iOS.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a -headers XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/include/$PROJECT_NAME \
-            -output XCFramework/${FRAMEWORK_NAME}.xcframework
+            -library ${ARCHIVE_PATH}/simulator.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a -headers ${XCF_PATH}/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphonesimulator/include/$PROJECT_NAME \
+            -library ${ARCHIVE_PATH}/iOS.xcarchive/Products/usr/local/lib/lib${PROJECT_NAME}.a -headers ${XCF_PATH}/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/include/$PROJECT_NAME \
+            -output $XCF_PATH/${FRAMEWORK_NAME}.xcframework
             
         # .a库需要额外做工作
         libraryOutput
@@ -219,7 +240,7 @@ function createXCFramework() {
             -allow-internal-distribution \
             -framework ${ARCHIVE_PATH}/simulator.xcarchive/Products/Library/Frameworks/${PROJECT_NAME}.framework \
             -framework ${ARCHIVE_PATH}/iOS.xcarchive/Products/Library/Frameworks/${PROJECT_NAME}.framework \
-            -output XCFramework/${FRAMEWORK_NAME}.xcframework
+            -output ${XCF_PATH}/${FRAMEWORK_NAME}.xcframework
     fi
     
     logHigh "xcframework合并完成"
@@ -237,7 +258,7 @@ function dealBuildFile() {
 }
 
 function openXCFramework() {
-   open ./XCFramework
+   open ./${XCF_PATH}
 }
 
 function libraryOutput() {
@@ -246,43 +267,43 @@ function libraryOutput() {
     echo '====> 开始配置library的必要文件'
 
     # swift文件产生的，给Swift代码调用时需要用到（模拟器和真机分别都需要）
-    source_simulator_swiftmodule="XCFramework/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphonesimulator/$PROJECT_NAME.swiftmodule"
-    source_ios_swiftmodule="XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/$PROJECT_NAME.swiftmodule"
+    source_simulator_swiftmodule="${XCF_PATH}/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphonesimulator/$PROJECT_NAME.swiftmodule"
+    source_ios_swiftmodule="${XCF_PATH}/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/BuildProductsPath/Release-iphoneos/$PROJECT_NAME.swiftmodule"
     
     # 编译产生的隐藏文件
-    source_simulator_derivedSources="XCFramework/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/$PROJECT_NAME.build/Release-iphonesimulator/$PROJECT_NAME.build/DerivedSources"
-    source_ios_derivedSources="XCFramework/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/$PROJECT_NAME.build/Release-iphoneos/$PROJECT_NAME.build/DerivedSources"
+    source_simulator_derivedSources="${XCF_PATH}/Build/Simulator/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/$PROJECT_NAME.build/Release-iphonesimulator/$PROJECT_NAME.build/DerivedSources"
+    source_ios_derivedSources="${XCF_PATH}/Build/Device/Build/Intermediates.noindex/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/$PROJECT_NAME.build/Release-iphoneos/$PROJECT_NAME.build/DerivedSources"
     
     if [ -e "${source_simulator_swiftmodule}" ]; then
-        mkdir -p "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/$PROJECT_NAME.swiftmodule"
-        cp -r "${source_simulator_swiftmodule}/"* "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/$PROJECT_NAME.swiftmodule"
+        mkdir -p "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/$PROJECT_NAME.swiftmodule"
+        cp -r "${source_simulator_swiftmodule}/"* "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/$PROJECT_NAME.swiftmodule"
         log "Copy simulator.swiftmodule文件完成"
     fi
     
     if [ -e "${source_ios_swiftmodule}" ]; then
-        mkdir -p "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/$PROJECT_NAME.swiftmodule"
-        cp -r "${source_ios_swiftmodule}/"* "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/$PROJECT_NAME.swiftmodule"
+        mkdir -p "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/$PROJECT_NAME.swiftmodule"
+        cp -r "${source_ios_swiftmodule}/"* "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/$PROJECT_NAME.swiftmodule"
         log "Copy ios.swiftmodule文件完成"
     fi
     
     # 创建 swift 兼容文件夹
-    mkdir -p "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Swift Compatibility Header"
-    mkdir -p "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/Swift Compatibility Header"
+    mkdir -p "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Swift Compatibility Header"
+    mkdir -p "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/Swift Compatibility Header"
     for file in $(find "$source_simulator_derivedSources" -name '*-Swift.h'); do
        log "遍历到的隐藏文件 ${file}"
-       cp -f "$file" "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Swift Compatibility Header"
+       cp -f "$file" "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Swift Compatibility Header"
        log 'Copy simulator -Swift.h文件成功'
     done
     
     for file in $(find "$source_ios_derivedSources" -name '*-Swift.h'); do
        log "遍历到的隐藏文件 ${file}"
-       cp -f "$file" "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/Swift Compatibility Header"
+       cp -f "$file" "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/Swift Compatibility Header"
        log 'Copy ios -Swift.h文件成功'
     done
     
     # xcframework 的 Headers路径
-    source_simulator_headers="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Headers"
-    source_ios_headers="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/Headers"
+    source_simulator_headers="${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Headers"
+    source_ios_headers="${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/Headers"
     
     log "检测是否有自定义 Umbrella 和 modulemap文件"
     isUmbrella="0"
@@ -296,7 +317,7 @@ function libraryOutput() {
             log "simulator 自定义modulemap文件 ${file}"
             isModulemap="1"
         fi
-       mv -f "$file" "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator"
+       mv -f "$file" "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator"
     done
     
     for file in $(find "$source_ios_headers" -name '*-umbrella.h' -o -name '*.modulemap'); do
@@ -307,7 +328,7 @@ function libraryOutput() {
             log "ios 自定义modulemap文件 ${file}"
             isModulemap="1"
         fi
-       mv -f "$file" "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64"
+       mv -f "$file" "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64"
     done
     
     if [ $isUmbrella = "0" ]; then
@@ -325,8 +346,8 @@ function createUmbrella() {
     echo
     log "开始生成-umbrella.h文件"
     # 指定文件名和路径
-    simulator_umbrella_file="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/${PROJECT_NAME}-umbrella.h"
-    ios_umbrella_file="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/${PROJECT_NAME}-umbrella.h"
+    simulator_umbrella_file="${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/${PROJECT_NAME}-umbrella.h"
+    ios_umbrella_file="${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/${PROJECT_NAME}-umbrella.h"
     
 # 模拟器-创建头文件并写入内容（这里不能缩进代码）
 cat > "$simulator_umbrella_file" << EOF
@@ -345,7 +366,7 @@ cat > "$simulator_umbrella_file" << EOF
 EOF
 
     # 暴露模拟器头文件
-    for file in $(find "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Headers" -name '*.h'); do
+    for file in $(find "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Headers" -name '*.h'); do
         # 过滤xxx-Swift.文件
         if [[ $file == *"-Swift.h"* ]]; then
             continue
@@ -384,7 +405,7 @@ cat > "$ios_umbrella_file" << EOF
 EOF
 
     # 暴露真机头文件
-    for file in $(find "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/Headers" -name '*.h'); do
+    for file in $(find "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/Headers" -name '*.h'); do
         # 过滤xxx-Swift.文件
         if [[ $file == *"-Swift.h"* ]]; then
             continue
@@ -412,10 +433,10 @@ function createModulemap() {
     # 模块名称和目标文件路径
     module_name="${PROJECT_NAME}"
     module_swift_name="${PROJECT_NAME}.Swift"
-    modulemap_file="XCFramework/${PROJECT_NAME}.modulemap"
+    modulemap_file="${XCF_PATH}/${PROJECT_NAME}.modulemap"
     
-    simulator_modulemap_file="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/${PROJECT_NAME}.modulemap"
-    ios_modulemap_file="XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/${PROJECT_NAME}.modulemap"
+    simulator_modulemap_file="${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/${PROJECT_NAME}.modulemap"
+    ios_modulemap_file="${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/${PROJECT_NAME}.modulemap"
 
 # 创建模块映射文件并写入内容（这里不能缩进代码）
 # 模拟器
@@ -439,7 +460,7 @@ module $module_name {
 EOF
 
     # 模拟器环境 是否有swift文件
-    if [ -e "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Swift Compatibility Header/${PROJECT_NAME}-Swift.h" ]; then
+    if [ -e "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-x86_64-simulator/Swift Compatibility Header/${PROJECT_NAME}-Swift.h" ]; then
     
 cat <<EOF >> "$simulator_modulemap_file"
 
@@ -452,7 +473,7 @@ EOF
     fi
     
     # 真机环境 是否有swift文件
-    if [ -e "XCFramework/${FRAMEWORK_NAME}.xcframework/ios-arm64/Swift Compatibility Header/${PROJECT_NAME}-Swift.h" ]; then
+    if [ -e "${XCF_PATH}/${FRAMEWORK_NAME}.xcframework/ios-arm64/Swift Compatibility Header/${PROJECT_NAME}-Swift.h" ]; then
     
 cat <<EOF >> "$ios_modulemap_file"
 
@@ -466,6 +487,7 @@ EOF
     logHigh "生成modulemap文件完成"
 }
 
+# 如果git自动推送失败可以手动推送
 function pushXCFramework() {
 
     if [ "$AUTO_PUSH" == "YES" ]; then
@@ -479,7 +501,8 @@ function pushXCFramework() {
     if [ "$userInput" == "yes" ]; then
         # 更新子模块
         log "更新子模块"
-        git submodule update --remote --merge
+        # 此时子模块会有 HEAD 游离的分支在
+        git submodule update --init --remote
         
         if [ "$PODSPEC_PATH" == "" ]; then
             PODSPEC_PATH=${PROJECT_NAME}.podspec
@@ -493,40 +516,84 @@ function pushXCFramework() {
         # 版本信息
         version=$(cat $PODSPEC_PATH | grep -E "\s*\.version\s*=" | awk -F= '{print $2}' | tr -d " ';\"")
         logHigh "version：$version"
-        
+
         # 自动同步版本号
-        sed -i '' "s/\.version. *=.*/\.version = '$version'/" XCFramework/${PROJECT_NAME}.xcframework.podspec
+        sed -i '' "s/\.version. *=.*/\.version = '$version'/" ${XCF_PATH}/${PROJECT_NAME}.xcframework.podspec
         logHigh "同步版本号完成"
-                
+
         # 自动同步README.md
         if [ -e "${README_PATH}" ]; then
-            cp -r ${README_PATH} "XCFramework"
+            cp -r ${README_PATH} "${XCF_PATH}"
             logHigh "同步README.md文件完成"
         fi
-        
+
         logHigh "开始对${FRAMEWORK_NAME}.xcframework文件压缩成zip"
-        cd XCFramework
+        cd ${XCF_PATH}
+
         zip -r "${FRAMEWORK_NAME}.xcframework.zip" "${FRAMEWORK_NAME}.xcframework"
         logHigh "压缩完成 -> 移除原文件${FRAMEWORK_NAME}.xcframework"
         # 启用了自动上传就删除编译文件
         rm -rf ${FRAMEWORK_NAME}.xcframework
-
+        
+        echo
         log "开始提交子模块更新"
         git status
         # 获取当前分支名
-        current_branch=$(git rev-parse --abbrev-ref HEAD)
+        current_branch=$(git branch | grep "*")
+        echo "current_branch = $current_branch"
         # 判断当前分支是否为master
         if [ "$current_branch" != "master" ]; then
-          # 切换到master分支
-          git checkout master
-          echo "已切换到master分支"
+          # 删除本地临时分支保证自动化流程不被中断
+          if [[ $(git branch --list temp) ]]; then
+              git branch -d temp
+          fi
+          git checkout -b temp
+          git branch
         else
           echo "当前已经在master分支"
         fi
 
-        git add .
-        git commit -m "v${version}"
-        git push
+        # 检查是否有待提交的更改
+        if [[ $(git status --porcelain) ]]; then
+          logHigh "有待提交的更改."
+          git add .
+          git commit -m "v${version}"
+        else
+          logHigh "没有待提交的更改."
+        fi
+        
+        # 切换到master分支
+        git checkout master
+        echo "已切换到master分支"
+        # 把temp分支合并过来
+        git merge temp
+        
+        git pull origin master
+        # 解决冲突（如果有冲突）
+        if [ $? -ne 0 ]; then
+          echo "合并有冲突，请手动解决冲突提交"
+          exit 1
+        fi
+        
+        # 这一步有可能会因为网络环境失败 失败了 请手动提交
+        git push origin master
+        git lfs push origin master
+        
+        # 同步远端tag
+        git fetch --tags
+        if [[ $(git tag --list v${version}) ]]; then
+            echo "有同名的tag"
+            # 删除旧tag
+            git tag -d "v${version}"
+            git push origin :refs/tags/v${version}
+        fi
+        
+        # 推送tag
+        git tag "v${version}"
+        git push origin "v${version}"
+        
+        # 删除临时分支
+        git branch -d temp
     else
         openXCFramework
     fi
@@ -541,6 +608,8 @@ START_SHELL_TIME=`date +%s`
 preBuildCheck
 
 removeBuild
+
+adjustBuiledSh
 
 startBuild
 

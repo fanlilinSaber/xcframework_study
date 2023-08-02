@@ -230,7 +230,9 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreFoundation;
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #endif
@@ -256,6 +258,14 @@ SWIFT_CLASS("_TtC13StaticLibrary15PublicSwiftTest")
 @interface PublicSwiftTest : NSObject
 + (void)test;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSCoder;
+
+SWIFT_CLASS("_TtC13StaticLibrary15PublicSwiftView")
+@interface PublicSwiftView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
 #endif

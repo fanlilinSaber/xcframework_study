@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,9 @@
 		48BE1ACC2A4D6CED00BF3823 /* PrivateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1ACB2A4D6CED00BF3823 /* PrivateTest.m */; };
 		48BE1AD42A4D850000BF3823 /* PublicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE1AD32A4D850000BF3823 /* PublicTest.m */; };
 		48BE1AD52A4D851C00BF3823 /* PublicTest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 48BE1AD22A4D850000BF3823 /* PublicTest.h */; };
+		48C4C4012A7A53AB00E5B2C4 /* PublicSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4C4002A7A53AB00E5B2C4 /* PublicSwiftView.swift */; };
+		789663FE8D8757B6E1A588B8 /* Pods_StaticLibrary_IOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06E08718A89E33866254AA4 /* Pods_StaticLibrary_IOS_Example.framework */; };
+		E69C7768135B2A98315D9575 /* Pods_StaticLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5AE39A24E6425EF8882515 /* Pods_StaticLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E66AA27583E0BF83E5BB1C2 /* Pods-StaticLibrary IOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaticLibrary IOS Example.release.xcconfig"; path = "Target Support Files/Pods-StaticLibrary IOS Example/Pods-StaticLibrary IOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		2758102E2A55CFF100319431 /* StaticLibrary.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = StaticLibrary.modulemap; sourceTree = "<group>"; };
 		480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSwiftTest.swift; sourceTree = "<group>"; };
 		480B8D432A4E7E3300E598C4 /* StaticLibrary IOS Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StaticLibrary IOS Example-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -74,6 +78,12 @@
 		48BE1ACB2A4D6CED00BF3823 /* PrivateTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivateTest.m; sourceTree = "<group>"; };
 		48BE1AD22A4D850000BF3823 /* PublicTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicTest.h; sourceTree = "<group>"; };
 		48BE1AD32A4D850000BF3823 /* PublicTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicTest.m; sourceTree = "<group>"; };
+		48C4C4002A7A53AB00E5B2C4 /* PublicSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSwiftView.swift; sourceTree = "<group>"; };
+		7C03BCF6997ECFFA022F4E94 /* Pods-StaticLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaticLibrary.debug.xcconfig"; path = "Target Support Files/Pods-StaticLibrary/Pods-StaticLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		9A4CE8DCB223FBF5E720AD06 /* Pods-StaticLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaticLibrary.release.xcconfig"; path = "Target Support Files/Pods-StaticLibrary/Pods-StaticLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		B8442C765353FDF203BBD656 /* Pods-StaticLibrary IOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaticLibrary IOS Example.debug.xcconfig"; path = "Target Support Files/Pods-StaticLibrary IOS Example/Pods-StaticLibrary IOS Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DF5AE39A24E6425EF8882515 /* Pods_StaticLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StaticLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F06E08718A89E33866254AA4 /* Pods_StaticLibrary_IOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StaticLibrary_IOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69C7768135B2A98315D9575 /* Pods_StaticLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				485936FF2A567ECB00F98122 /* libStaticLibrary.a in Frameworks */,
+				789663FE8D8757B6E1A588B8 /* Pods_StaticLibrary_IOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				480B8D412A4E795D00E598C4 /* PublicSwiftTest.swift */,
+				48C4C4002A7A53AB00E5B2C4 /* PublicSwiftView.swift */,
 				48BE1AD22A4D850000BF3823 /* PublicTest.h */,
 				48BE1AD32A4D850000BF3823 /* PublicTest.m */,
 				48BE1A6A2A4D307900BF3823 /* StaticLibrary.h */,
@@ -125,6 +138,7 @@
 				48BE1A782A4D30C900BF3823 /* StaticLibrary IOS Example */,
 				48BE1A682A4D307900BF3823 /* Products */,
 				48BE1A902A4D310A00BF3823 /* Frameworks */,
+				621C7CE51A6E55A4BC7EA761 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,8 +183,21 @@
 		48BE1A902A4D310A00BF3823 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF5AE39A24E6425EF8882515 /* Pods_StaticLibrary.framework */,
+				F06E08718A89E33866254AA4 /* Pods_StaticLibrary_IOS_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		621C7CE51A6E55A4BC7EA761 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C03BCF6997ECFFA022F4E94 /* Pods-StaticLibrary.debug.xcconfig */,
+				9A4CE8DCB223FBF5E720AD06 /* Pods-StaticLibrary.release.xcconfig */,
+				B8442C765353FDF203BBD656 /* Pods-StaticLibrary IOS Example.debug.xcconfig */,
+				1E66AA27583E0BF83E5BB1C2 /* Pods-StaticLibrary IOS Example.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48BE1A702A4D307900BF3823 /* Build configuration list for PBXNativeTarget "StaticLibrary" */;
 			buildPhases = (
+				C9DB725DFDF4A9496D7DF52C /* [CP] Check Pods Manifest.lock */,
 				48BE1A632A4D307900BF3823 /* Sources */,
 				48BE1A642A4D307900BF3823 /* Frameworks */,
 				48BE1A652A4D307900BF3823 /* Copy Files */,
@@ -197,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48BE1A8D2A4D30CA00BF3823 /* Build configuration list for PBXNativeTarget "StaticLibrary IOS Example" */;
 			buildPhases = (
+				8214C62619DCE998D1F17B96 /* [CP] Check Pods Manifest.lock */,
 				48BE1A732A4D30C900BF3823 /* Sources */,
 				48BE1A742A4D30C900BF3823 /* Frameworks */,
 				48BE1A752A4D30C900BF3823 /* Resources */,
+				4899F546C291D095215BEF52 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,7 +261,7 @@
 				};
 			};
 			buildConfigurationList = 48BE1A622A4D307900BF3823 /* Build configuration list for PBXProject "StaticLibrary" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -262,6 +292,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4899F546C291D095215BEF52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StaticLibrary IOS Example/Pods-StaticLibrary IOS Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StaticLibrary IOS Example/Pods-StaticLibrary IOS Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StaticLibrary IOS Example/Pods-StaticLibrary IOS Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8214C62619DCE998D1F17B96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StaticLibrary IOS Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DB725DFDF4A9496D7DF52C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StaticLibrary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48BE1A632A4D307900BF3823 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -270,6 +364,7 @@
 				480B8D422A4E795D00E598C4 /* PublicSwiftTest.swift in Sources */,
 				48BE1A6C2A4D307900BF3823 /* StaticLibrary.m in Sources */,
 				48BE1AD42A4D850000BF3823 /* PublicTest.m in Sources */,
+				48C4C4012A7A53AB00E5B2C4 /* PublicSwiftView.swift in Sources */,
 				48BE1ACC2A4D6CED00BF3823 /* PrivateTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +523,7 @@
 		};
 		48BE1A712A4D307900BF3823 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C03BCF6997ECFFA022F4E94 /* Pods-StaticLibrary.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_CXX_LIBRARY = "libc++";
@@ -462,6 +558,7 @@
 		};
 		48BE1A722A4D307900BF3823 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A4CE8DCB223FBF5E720AD06 /* Pods-StaticLibrary.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_CXX_LIBRARY = "libc++";
@@ -495,6 +592,7 @@
 		};
 		48BE1A8E2A4D30CA00BF3823 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8442C765353FDF203BBD656 /* Pods-StaticLibrary IOS Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -539,6 +637,7 @@
 		};
 		48BE1A8F2A4D30CA00BF3823 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E66AA27583E0BF83E5BB1C2 /* Pods-StaticLibrary IOS Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
